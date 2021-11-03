@@ -20,6 +20,10 @@
   },
   "devDependencies": {
     "eslint": "8.0.1",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "file-system": "^2.2.2",
+    "filesystem": "^1.0.1",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
   }
 }

@@ -1,6 +1,8 @@
+import { importDb } from '../config/db';
 import ProjectsStyles from '../styles/Projects.module.css';
 
-const Projects = () => {
+const Projects = ({ projects }) => {
+  console.log(projects, 'projects');
   return (
     <projects className={ProjectsStyles.projects} id='projects'>
       <div className={ProjectsStyles.container}>
@@ -55,6 +57,12 @@ const Projects = () => {
       </div>
     </projects>
   );
+};
+
+export const getServerSideProps = async () => {
+  const db = await importDb();
+  const projects = await db.all('select * from project');
+  return { props: { projects } };
 };
 
 export default Projects;
