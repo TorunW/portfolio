@@ -1,0 +1,41 @@
+.about .container {
+  position: relative;
+}
+.about .container .custom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.about .container .custom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 124px;
+}
+.about .container .custom .shape {
+  fill: var(--dark-pink);
+}
+.about .contentContainer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.about .contentContainer .content {
+  background: #2b2020;
+  width: 50%;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  line-height: 1.7em;
+}
+.about .contentContainer .content h1 {
+  color: var(--green);
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+}

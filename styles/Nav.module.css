@@ -1,0 +1,27 @@
+.nav {
+  height: 50px;
+  padding: 10px;
+  background: #161616;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  position: fixed;
+}
+.nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.nav ul li {
+  margin: 5px 15px;
+}
+.nav ul li:hover {
+  cursor: pointer;
+  color: var(--green);
+  transform: scale(1.1);
+}

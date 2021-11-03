@@ -1,0 +1,9 @@
+.icons {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
+.icons div img {
+  height: 80px;
+  margin: 0 1vw;
+}

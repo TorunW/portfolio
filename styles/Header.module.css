@@ -1,0 +1,22 @@
+.header {
+  background: url('/test1.jpg') no-repeat center center / cover;
+  height: 630px;
+  position: relative;
+  background-attachment: fixed;
+}
+.header div {
+  font-family: 'Montserrat';
+  font-size: 80px;
+  font-weight: 200;
+  color: var(--dark-pink);
+  position: relative;
+  z-index: 3;
+  padding: 20vh 15vw;
+}
+.header b {
+  font-weight: 500;
+  color: var(--green);
+}
+.header .dot {
+  color: var(--dark-pink);
+}
