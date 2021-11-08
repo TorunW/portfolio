@@ -1,8 +1,6 @@
-import { importDb } from '../config/db';
 import ProjectsStyles from '../styles/Projects.module.css';
 
-const Projects = ({ projects }) => {
-  console.log(projects, 'projects');
+const Projects = () => {
   return (
     <projects className={ProjectsStyles.projects} id='projects'>
       <div className={ProjectsStyles.container}>
@@ -10,8 +8,8 @@ const Projects = ({ projects }) => {
         <section className={ProjectsStyles.dark}>
           <div>
             <i className='fas fa-laptop'></i>
-            <i className='fas fa-tablet-alt'></i>{' '}
-            <i className='fas fa-mobile-alt'></i>{' '}
+            <i className='fas fa-tablet-alt'></i>
+            <i className='fas fa-mobile-alt'></i>
           </div>
           <div>
             <h2>Rock'n'Roll Herberge</h2>
@@ -33,9 +31,9 @@ const Projects = ({ projects }) => {
 
         <section className={ProjectsStyles.dark}>
           <div>
-            <img src='/tablet.png' className={ProjectsStyles.tablet} />
-            <img src='/pc.png' className={ProjectsStyles.pc} />
-            <img src='/mobile.png' className={ProjectsStyles.mobile} />
+            <i className='fas fa-laptop'></i>
+            <i className='fas fa-tablet-alt'></i>
+            <i className='fas fa-mobile-alt'></i>
           </div>
           <div>
             <h2>Rock'n'Roll Herberge</h2>
@@ -57,12 +55,6 @@ const Projects = ({ projects }) => {
       </div>
     </projects>
   );
-};
-
-export const getServerSideProps = async () => {
-  const db = await importDb();
-  const projects = await db.all('select * from project');
-  return { props: { projects } };
 };
 
 export default Projects;

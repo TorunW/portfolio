@@ -96,10 +96,8 @@ const Contact = () => {
         </div>
 
         <div className='submit'>
-          <div className='btn-wrapper'>
-            <a className={ContactStyles.btn}>Send message</a>
-            {displaySuccessMessage}
-          </div>
+          <a className={ContactStyles.btn}>Send message</a>
+          {displaySuccessMessage}
         </div>
       </form>
     </contact>
