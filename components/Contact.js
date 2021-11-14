@@ -2,26 +2,34 @@ import ContactStyles from '../styles/Contact.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const Contact = () => {
-  const [fullName, setFullName] = useState('');
-  const [fullNameError, setFullNameError] = useState(false);
-  const [email, setEmail] = useState('');
+const Contact = (props, contact) => {
+  const [fullname, setFullname] = useState(contact.fullname);
+  const [fullnameError, setFullnameError] = useState(false);
+  const [email, setEmail] = useState(contact.email);
   const [emailError, setEmailError] = useState(false);
-  const [message, setMessage] = useState('');
+  const [msg, setMsg] = useState(contact.msg);
   const [messageError, setMessageError] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
 
-  // function submitForm() {
-
-  // }
+  function onSubmit() {
+    if (formValidation) {
+      let newMessage = {
+        fullname,
+        email,
+        msg,
+      };
+      props.onSubmit(newMessage);
+      setMessageSent(true);
+    }
+  }
 
   function formValidation() {
     let isValidated = true;
-    if (fullName.length < 1) {
-      setFullNameError(true);
+    if (fullname.length < 1) {
+      setFullnameError(true);
       isValidated = false;
     } else {
-      setFullNameError(false);
+      setFullnameError(false);
     }
 
     const patternEmail =
@@ -44,9 +52,9 @@ const Contact = () => {
     return isValidated;
   }
 
-  let fullNameErrorDisplay;
-  if (fullNameError === true) {
-    fullNameErrorDisplay = <p className='error'>Name cannot be empty</p>;
+  let fullnameErrorDisplay;
+  if (fullnameError === true) {
+    fullnameErrorDisplay = <p className='error'>Name cannot be empty</p>;
   }
 
   let emailErrorDisplay;
@@ -75,28 +83,38 @@ const Contact = () => {
       <form>
         <div className={ContactStyles.container}>
           <input
-            value={fullName}
-            // onChange={(e) => setFullName(e.target.value)}
+            value={fullname}
+            onChange={(e) => setFullname(e.target.value)}
             type='text'
           />
           <label>Name</label>
-          {fullNameErrorDisplay}
+          {fullnameErrorDisplay}
         </div>
 
         <div className={ContactStyles.container}>
-          <input type='email' />
+          <input
+            type='email'
+            onChange={(e) => setEmail(e.target.value)}
+            type='text'
+          />
           <label>Email</label>
           {emailErrorDisplay}
         </div>
 
         <div className={ContactStyles.container}>
-          <textarea type='text'></textarea>
+          <textarea
+            type='text'
+            onChange={(e) => setMsg(e.target.value)}
+            type='text'
+          ></textarea>
           <label>Message</label>
           {messageErrorDisplay}
         </div>
 
         <div className='submit'>
-          <a className={ContactStyles.btn}>Send message</a>
+          <a className={ContactStyles.btn} onClick={onSubmit}>
+            Send message
+          </a>
           {displaySuccessMessage}
         </div>
       </form>

@@ -9,12 +9,12 @@ export default async function getMessageById(
 
   if (req.method === 'PUT') {
     await db.run(
-      `update contact set fullname = ?, email = ?, msg = ?, created_at = ?, read = ? where id = ?`,
+      `update contact set fullname = ?, email = ?, msg = ?, created_at = ?, seen = ? where id = ?`,
       req.body.fullname,
       req.body.email,
       req.body.msg,
       req.body.created_at,
-      req.body.read,
+      req.body.seen,
       req.query.id
     );
   }

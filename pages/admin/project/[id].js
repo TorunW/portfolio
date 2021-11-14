@@ -1,6 +1,7 @@
 import { importDb } from '../../../config/db';
 import { useState } from 'react';
 import { server } from '../../../config/server';
+import Link from 'next/link';
 
 const projectView = ({ project }) => {
   const [title, setTitle] = useState(project.title);
@@ -55,6 +56,7 @@ const projectView = ({ project }) => {
         />
         <input value={gitLink} onChange={(e) => setGitLink(e.target.value)} />
         <button onClick={() => onSave(id)}>Save Changes</button>
+        <Link href='/admin'>Back to admin panel</Link>
       </div>
     </div>
   );

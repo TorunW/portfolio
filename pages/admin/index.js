@@ -2,12 +2,11 @@ import { importDb } from '../../config/db';
 import NewProjectForm from '../../components/NewProjectForm';
 import { server } from '../../config/server';
 import { useState } from 'react';
-import EditAboutForm from '../../components/EditAboutForm';
+import Link from 'next/link';
 
-const admin = ({ initProjects, initInfos, initContact }) => {
+const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
-  const [messages, setMessages] = useState(initContact);
 
   async function onAddNewProject(newProject) {
     const response = await fetch(`${server}/api/projects`, {
@@ -47,26 +46,24 @@ const admin = ({ initProjects, initInfos, initContact }) => {
           <a onClick={() => onDeleteProject(project.id)}>
             Delete from portfolio
           </a>
+          <Link href={`admin/project/${project.id}`}>Edit project</Link>
+          <hr />
         </div>
       ))}
-      <EditAboutForm onSubmit={onEditAbout} />
       <h3>About</h3>
+
       {infos.map((aboutinfo, index) => (
         <div key={index} aboutinfo={aboutinfo}>
           <li>{aboutinfo.title}</li>
           <li>{aboutinfo.info_text}</li>
+          <Link href={`admin/about/${aboutinfo.id}`}>Edit About</Link>
+          <hr />
         </div>
       ))}
-      <h3>Messages</h3>
-      {messages.map((message, index) => (
-        <div key={index} message={message}>
-          <li>{message.fullname}</li>
-          <li>{message.email}</li>
-          <li>{message.msg}</li>
-          <li>{message.created_at}</li>
-          <li>{message.read}</li>
-        </div>
-      ))}
+
+      <Link href='admin/inbox'>
+        <h3>Inbox</h3>
+      </Link>
     </div>
   );
 };
@@ -78,5 +75,19 @@ export const getServerSideProps = async () => {
   const projects = await db.all('select * from project');
   const infos = await db.all('select * from aboutinfo');
 
-  return { props: { initProjects: projects, initInfos: infos } };
+  return {
+    props: { initProjects: projects, initInfos: infos },
+  };
 };
+
+// async function onEditAbout(newAbout) {
+//   const response = await fetch(`${server}/api/about`, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(newAbout),
+//   });
+//   const newAboutText = await response.json();
+//   setInfos(newAboutText);
+// }

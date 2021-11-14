@@ -8,12 +8,12 @@ export default async function getMessages(
   const db = await importDb();
   if (req.method === 'POST') {
     await db.run(
-      'INSERT INTO contact(fullname,email,msg,created_at,read) VALUES (?,?,?,?,?)',
+      'INSERT INTO contact(fullname, email, msg, created_at, seen) VALUES (?,?,?,?,?)',
       req.body.fullname,
       req.body.email,
       req.body.msg,
       req.body.created_at,
-      req.body.read
+      req.body.seen
     );
   }
   let messages = await db.all('select * from contact');

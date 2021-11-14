@@ -8,5 +8,7 @@ export const importDb = async () => {
     driver: sqlite3.Database,
   });
 
+  // db.migrate to get all in folder migrate included in db
+  // await db.migrate({ force: 'last' });
   return db;
 };
