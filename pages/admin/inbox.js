@@ -26,9 +26,7 @@ const inbox = ({ initMessages }) => {
           <li>{message.email}</li>
           <li>{message.msg}</li>
           <li>{message.created_at}</li>
-          <button onSubmit={onSeenClick}>
-            {message.seen === true ? 'seen' : 'unread'}
-          </button>
+          <button>{message.seen === true ? 'seen' : 'unread'}</button>
           <a onClick={() => onDeleteMessage(message.id)}>Delete from inbox</a>
         </div>
       ))}
