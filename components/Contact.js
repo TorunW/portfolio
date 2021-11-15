@@ -3,16 +3,18 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const Contact = (props, contact) => {
-  const [fullname, setFullname] = useState(contact.fullname);
+  const [fullname, setFullname] = useState('');
   const [fullnameError, setFullnameError] = useState(false);
-  const [email, setEmail] = useState(contact.email);
+  const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
-  const [msg, setMsg] = useState(contact.msg);
+  const [msg, setMsg] = useState('');
   const [messageError, setMessageError] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
+  console.log(messageSent);
 
   function onSubmit() {
-    if (formValidation) {
+    if (formValidation()) {
+      console.log(formValidation, 'fomr');
       let newMessage = {
         fullname,
         email,
@@ -42,7 +44,7 @@ const Contact = (props, contact) => {
       setEmailError(false);
     }
 
-    if (message.length < 1) {
+    if (msg.length < 1) {
       setMessageError(true);
       isValidated = false;
     } else {

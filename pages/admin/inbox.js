@@ -6,14 +6,39 @@ import Link from 'next/link';
 const inbox = ({ initMessages }) => {
   const [messages, setMessages] = useState(initMessages);
 
-  async function onSubmit() {
-    const response = await fetch(`${server}/api/message/${id}`, {
+  async function onSubmit(message) {
+    message.seen = message.seen === 1 ? 0 : 1;
+
+    const response = await fetch(`${server}/api/message/${message.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(updateMessage),
+      body: JSON.stringify(message),
     });
+    await response.json();
+    getMessages();
+  }
+
+  async function getMessages() {
+    const response = await fetch(`${server}/api/messages`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const newMessages = await response.json();
+    setMessages(newMessages);
+  }
+
+  async function onDeleteMessage(id) {
+    await fetch(`${server}/api/message/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    getMessages();
   }
 
   return (
@@ -26,7 +51,9 @@ const inbox = ({ initMessages }) => {
           <li>{message.email}</li>
           <li>{message.msg}</li>
           <li>{message.created_at}</li>
-          <button>{message.seen === true ? 'seen' : 'unread'}</button>
+          <button onClick={() => onSubmit(message)}>
+            {message.seen === 1 ? 'seen' : 'unread'}
+          </button>
           <a onClick={() => onDeleteMessage(message.id)}>Delete from inbox</a>
         </div>
       ))}
