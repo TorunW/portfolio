@@ -2,6 +2,8 @@ import { importDb } from '../../config/db';
 import { server } from '../../config/server';
 import { useState } from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
+import InboxStyles from '../../styles/Inbox.module.css';
 
 const inbox = ({ initMessages }) => {
   const [messages, setMessages] = useState(initMessages);
@@ -42,22 +44,65 @@ const inbox = ({ initMessages }) => {
   }
 
   return (
-    <div>
+    <div className={InboxStyles.inbox}>
+      <Head>
+        <script
+          src='https://kit.fontawesome.com/4eddce3a99.js'
+          crossorigin='anonymous'
+        ></script>
+      </Head>
       <h2>messages, inbox</h2>
 
-      {messages.map((message, index) => (
-        <div key={index} message={message}>
-          <li>{message.fullname}</li>
-          <li>{message.email}</li>
-          <li>{message.msg}</li>
-          <li>{message.created_at}</li>
-          <button onClick={() => onSubmit(message)}>
-            {message.seen === 1 ? 'seen' : 'unread'}
-          </button>
-          <a onClick={() => onDeleteMessage(message.id)}>Delete from inbox</a>
-        </div>
-      ))}
-      <Link href='/admin'>Back to admin panel</Link>
+      <div className={InboxStyles.inboxcontainer}>
+        <table className={InboxStyles.table}>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th>created</th>
+              <th>Read</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {messages.map((message, index) => (
+              <tr key={index} message={message}>
+                <td>
+                  <span>{message.fullname}</span>
+                </td>
+                <td>
+                  <span>{message.email}</span>
+                </td>
+                <td>
+                  <span>{message.msg}</span>
+                </td>
+                <td>
+                  <span>{message.created_at}</span>
+                </td>
+                <td>
+                  <a onClick={() => onSubmit(message)}>
+                    {message.seen === 1 ? (
+                      <i class='far fa-envelope'></i>
+                    ) : (
+                      <i class='far fa-envelope-open'></i>
+                    )}
+                  </a>
+                </td>
+                <td>
+                  <a onClick={() => onDeleteMessage(message.id)}>
+                    Delete from inbox
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <Link href='/admin' className={InboxStyles.backbtn}>
+        Back to admin panel
+      </Link>
     </div>
   );
 };

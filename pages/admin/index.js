@@ -1,8 +1,10 @@
 import { importDb } from '../../config/db';
-import NewProjectForm from '../../components/NewProjectForm';
+import ProjectForm from '../../components/ProjectForm';
 import { server } from '../../config/server';
 import { useState } from 'react';
 import Link from 'next/link';
+import AdminStyles from '../../styles/Admin.module.css';
+import Head from 'next/head';
 
 const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
@@ -30,41 +32,74 @@ const admin = ({ initProjects, initInfos }) => {
   }
 
   return (
-    <div>
-      <h2>Admin</h2>
-      <NewProjectForm onSubmit={onAddNewProject} />
-      <h3>Project</h3>
-      {projects.map((project, index) => (
-        <div key={index} project={project}>
-          <li>{project.title}</li>
-          <li>{project.about}</li>
-          <li>{project.mobile_image}</li>
-          <li>{project.tablet_image}</li>
-          <li>{project.desktop_image}</li>
-          <li>{project.website_link}</li>
-          <li>{project.git_link}</li>
-          <a onClick={() => onDeleteProject(project.id)}>
-            Delete from portfolio
+    <admin className={AdminStyles.admin}>
+      <Head>
+        <script
+          src='https://kit.fontawesome.com/4eddce3a99.js'
+          crossorigin='anonymous'
+        ></script>
+      </Head>
+      <div className={AdminStyles.adminPage}>
+        <div className={AdminStyles.header}>
+          <h2 className={AdminStyles.h2}>Admin Panel</h2>
+          <a className={AdminStyles.inbox} href='admin/inbox'>
+            <i class='fas fa-envelope'></i>
+            <div>Inbox</div>
           </a>
-          <Link href={`admin/project/${project.id}`}>Edit project</Link>
-          <hr />
         </div>
-      ))}
-      <h3>About</h3>
+        <ProjectForm onSubmit={onAddNewProject} />
 
-      {infos.map((aboutinfo, index) => (
-        <div key={index} aboutinfo={aboutinfo}>
-          <li>{aboutinfo.title}</li>
-          <li>{aboutinfo.info_text}</li>
-          <Link href={`admin/about/${aboutinfo.id}`}>Edit About</Link>
-          <hr />
+        <h3 className={AdminStyles.sectionHeader}>Project</h3>
+        <div className={AdminStyles.projectContainer}>
+          {projects.map((project, index) => (
+            <div className={AdminStyles.project} key={index} project={project}>
+              <p className={AdminStyles.title}>{project.title}</p>
+              <p>{project.about}</p>
+              <p>{project.mobile_image}</p>
+              <p>{project.tablet_image}</p>
+              <p>{project.desktop_image}</p>
+              <p>{project.websitelink}</p>
+              <p>{project.gitlink}</p>
+              <div className={AdminStyles.buttonContainer}>
+                <a
+                  className={AdminStyles.button}
+                  onClick={() => onDeleteProject(project.id)}
+                >
+                  Delete
+                </a>
+                <a
+                  className={AdminStyles.button}
+                  href={`admin/project/${project.id}`}
+                >
+                  Edit project
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
 
-      <Link href='admin/inbox'>
-        <h3>Inbox</h3>
-      </Link>
-    </div>
+        <h3 className={AdminStyles.sectionHeader}>About</h3>
+
+        {infos.map((aboutinfo, index) => (
+          <div
+            className={AdminStyles.aboutSection}
+            key={index}
+            aboutinfo={aboutinfo}
+          >
+            <p className={AdminStyles.title}>{aboutinfo.title}</p>
+            <p>{aboutinfo.info_text}</p>
+            <div className={AdminStyles.buttonContainer}>
+              <a
+                className={AdminStyles.button}
+                href={`admin/about/${aboutinfo.id}`}
+              >
+                Edit About
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </admin>
   );
 };
 

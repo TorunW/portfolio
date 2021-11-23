@@ -35,6 +35,7 @@ export default function Home({ projects, about, contact, initMessages }) {
       <Contact contact={contact} onSubmit={onSubmitNewMessage} />
       <Links />
       {/* <Skills /> */}
+      <script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons.js'></script>
     </div>
   );
 }

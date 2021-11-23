@@ -20,6 +20,7 @@
   fill: var(--dark-pink);
 }
 .about .contentContainer {
+  background: var(--dark-pink);
   display: flex;
   justify-content: center;
   padding-bottom: 50px;

@@ -1,0 +1,81 @@
+.admin {
+  font-family: 'Montserrat';
+}
+.admin .adminPage {
+  background: var(--light-grey);
+}
+.admin .header {
+  background-color: #f2f3f4;
+  height: 30px;
+  position: relative;
+  width: 100%;
+}
+.admin .header .h2 {
+  margin: 0;
+}
+.admin .header .inbox {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.admin .header .inbox div,
+.admin .header .inbox i {
+  float: right;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.admin .header .inbox i {
+  margin-top: 5px;
+}
+.admin .header .inbox div {
+  margin-top: 3px;
+  font-weight: 500;
+}
+.admin .sectionHeader {
+  text-align: center;
+}
+.admin .projectContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 30%);
+  grid-gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.admin .projectContainer .project {
+  border-radius: 5px;
+  padding: 30px 0 30px 30px;
+  color: var(--middle-grey);
+  background: var(--darkest-grey);
+}
+.admin .aboutSection {
+  background: var(--darkest-grey);
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px;
+  color: var(--middle-grey);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.admin .button {
+  display: inline-block;
+  border: 0;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 7px;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.admin .button:hover {
+  transform: scale(0.98);
+}
+.admin .buttonContainer {
+  text-align: right;
+}
+.admin .title {
+  font-weight: bold;
+}

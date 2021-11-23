@@ -10,11 +10,9 @@ const Contact = (props, contact) => {
   const [msg, setMsg] = useState('');
   const [messageError, setMessageError] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
-  console.log(messageSent);
 
   function onSubmit() {
     if (formValidation()) {
-      console.log(formValidation, 'fomr');
       let newMessage = {
         fullname,
         email,

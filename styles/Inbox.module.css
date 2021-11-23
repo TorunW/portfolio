@@ -1,0 +1,14 @@
+.inboxcontainer {
+  display: flex;
+  justify-content: center;
+}
+.inboxcontainer .table {
+  border-style: solid;
+  width: 90vw;
+}
+.inboxcontainer .table tr {
+  text-align: left;
+}
+.inbox {
+  display: flex;
+}

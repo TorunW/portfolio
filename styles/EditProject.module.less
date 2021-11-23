@@ -1,0 +1,98 @@
+.projectform {
+  height: 100%;
+  font-family: 'Montserrat';
+  .h2 {
+    text-align: center;
+  }
+  .container {
+    background: var(--darkest-grey);
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px;
+    color: var(--middle-grey);
+    border-radius: 5px;
+    margin-bottom: 30px;
+
+    .title {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .input {
+      margin-bottom: 30px;
+      border-style: none;
+      height: 25px;
+      width: 200px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .imageUploader {
+      background: var(--dark-grey);
+      border-radius: 5px;
+      border-style: none;
+      margin-bottom: 10px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+
+      h4 {
+        z-index: 1;
+        position: absolute;
+      }
+
+      input {
+        opacity: 0;
+        width: 100%;
+        height: 90px;
+        z-index: 2;
+      }
+
+      .img {
+        max-height: 180px;
+        margin-left: 40px;
+      }
+    }
+
+    .uploadbtn {
+      display: inline-block;
+      border: 0;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 7px;
+      padding: 5px 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 30px;
+      cursor: pointer;
+    }
+    .uploadbtn:hover {
+      transform: scale(0.98);
+    }
+
+    .button {
+      display: inline-block;
+      border: 0;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 7px;
+      padding: 5px 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .button:hover {
+      transform: scale(0.98);
+    }
+    .buttonContainer {
+      text-align: right;
+    }
+  }
+}

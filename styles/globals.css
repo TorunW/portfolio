@@ -77,6 +77,13 @@
   --green: #689775;
   --dark-pink: #907163;
   --light-pink: #b88a7c;
+
+  --light-grey: #dee2e6;
+  --middle-grey: #adb5bd;
+  --dark-grey: #2d353c;
+  --darkest-grey: #20252a;
+
+  --blue: #00acac;
 }
 
 html,

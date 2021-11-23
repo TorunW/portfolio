@@ -1,7 +1,6 @@
 import aboutStyles from '../styles/About.module.css';
-import Link from 'next/link';
 
-const About = () => {
+const About = ({ about }) => {
   return (
     <about className={aboutStyles.about} id='about'>
       <link
@@ -28,18 +27,12 @@ const About = () => {
         </div>
       </div>
       <div className={aboutStyles.contentContainer}>
-        <div className={aboutStyles.content}>
-          <h1 className={aboutStyles.h2}>About</h1>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
-        </div>
+        {about.map((a, i) => (
+          <div key={i} a={a} className={aboutStyles.content}>
+            <h1 className={aboutStyles.h2}>{a.title}</h1>
+            {a.info_text}
+          </div>
+        ))}
       </div>
     </about>
   );
