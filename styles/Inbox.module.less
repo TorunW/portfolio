@@ -1,19 +1,63 @@
-.inboxcontainer {
-  display: flex;
-  justify-content: center;
-  .table {
-    border-style: solid;
-    width: 90vw;
+.title {
+  text-align: center;
+  font-family: 'Montserrat';
+}
 
-    tr {
-      text-align: left;
+.table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  background: var(--darkest-grey);
+  width: 90%;
+  margin: 0 auto;
+  color: var(--middle-grey);
+  position: relative;
+
+  .th,
+  .td {
+    padding: 10px 10px;
+    font-size: 16px;
+    border-left: 1px solid var(--dark-grey);
+
+    .i {
+      cursor: pointer;
+      float: right;
+      margin-right: 5px;
     }
+  }
+
+  span {
+    padding-left: 10px;
+  }
+
+  .thName,
+  .th {
+    border-bottom: 1px solid var(--dark-grey);
+  }
+
+  .td,
+  .tdName {
+    border-top: 1px solid var(--dark-grey);
   }
 }
 
-.inbox {
-  display: flex;
+.button {
+  background: var(--blue);
+  color: #fff;
+  border-radius: 7px;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-right: 5%;
+  cursor: pointer;
+  float: right;
 }
 
-.backbtn {
+.button:hover {
+  transform: scale(0.98);
+}
+
+.buttonContainer {
+  width: 100%;
 }

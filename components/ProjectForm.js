@@ -1,4 +1,4 @@
-import { useState } from 'react/cjs/react.development';
+import { useState, useEffect } from 'react/cjs/react.development';
 import { getServerSideProps } from '../pages/admin';
 import ImageUploader from './ImageUploader';
 import { server } from '../config/server';
@@ -9,26 +9,37 @@ const ProjectForm = (props) => {
   const project = props.project;
   const [title, setTitle] = useState(project ? project.title : '');
   const [about, setAbout] = useState(project ? project.about : '');
-  const [mobileImage, setMobileImage] = useState(
-    project ? project.mobileImage : ''
-  );
-  const [tabletImage, setTabletImage] = useState(
-    project ? project.tabletImage : ''
-  );
+  // const [mobileImage, setMobileImage] = useState(
+  //   project ? project.mobileImage : ''
+  // );
+  // const [tabletImage, setTabletImage] = useState(
+  //   project ? project.tabletImage : ''
+  // );
   const [desktopImage, setDesktopImage] = useState(
-    project ? project.desktopImage : ''
+    project ? project.desktop_image : ''
   );
   const [websiteLink, setWebsiteLink] = useState(
-    project ? project.websiteLink : ''
+    project ? project.website_link : ''
   );
-  const [gitLink, setGitLink] = useState(project ? project.gitLink : '');
+  const [gitLink, setGitLink] = useState(project ? project.git_link : '');
+  const [update, setUpdate] = useState(false);
+  console.log(update, 'update');
+
+  useEffect(() => {
+    if (update === true) {
+      setTimeout(() => {
+        setUpdate(false);
+        window.location.reload();
+      }, 3000);
+    }
+  }, [update]);
 
   async function onSubmit() {
     let newProject = {
       title,
       about,
-      mobile_image: mobileImage,
-      tablet_image: tabletImage,
+      // mobile_image: mobileImage,
+      // tablet_image: tabletImage,
       desktop_image: desktopImage,
       website_link: websiteLink,
       git_link: gitLink,
@@ -50,6 +61,7 @@ const ProjectForm = (props) => {
     const res = await response.json();
 
     props.onSubmit(res);
+    setUpdate(true);
   }
 
   return (
@@ -69,12 +81,12 @@ const ProjectForm = (props) => {
           onChange={(e) => setAbout(e.target.value)}
         />
 
-        <div className={EditStyles.title}>Mobile</div>
+        {/* <div className={EditStyles.title}>Mobile</div>
         <ImageUploader
           className={EditStyles.imageUploader}
           image={mobileImage}
           onSetImage={setMobileImage}
-        />
+        /> */}
         {/* <div>Tablet</div>
         <ImageUploader image={tabletImage} onSetImage={setTabletImage} /> */}
         <div className={EditStyles.title}>Desktop</div>

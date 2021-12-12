@@ -24,6 +24,7 @@
     "file-system": "^2.2.2",
     "filesystem": "^1.0.1",
     "formidable": "^2.0.1",
+    "next-auth": "^4.0.1",
     "sqlite": "^4.0.23",
     "sqlite3": "^5.0.2"
   }

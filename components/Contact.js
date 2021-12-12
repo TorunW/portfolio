@@ -54,24 +54,30 @@ const Contact = (props, contact) => {
 
   let fullnameErrorDisplay;
   if (fullnameError === true) {
-    fullnameErrorDisplay = <p className='error'>Name cannot be empty</p>;
+    fullnameErrorDisplay = (
+      <p className={ContactStyles.error}>Name cannot be empty</p>
+    );
   }
 
   let emailErrorDisplay;
   if (emailError === true) {
-    emailErrorDisplay = <p className='error'>Email isn't valid</p>;
+    emailErrorDisplay = (
+      <p className={ContactStyles.error}>Email isn't valid</p>
+    );
   }
 
   let messageErrorDisplay;
   if (messageError === true) {
-    messageErrorDisplay = <p className='error'>Message cannot be empty </p>;
+    messageErrorDisplay = (
+      <p className={ContactStyles.error}>Message cannot be empty </p>
+    );
   }
 
   let displaySuccessMessage;
   if (messageSent === true) {
     displaySuccessMessage = (
       <div>
-        <p className='success'>
+        <p className={ContactStyles.success}>
           Thank you for your message, I will contact you as soon as possible!
         </p>
       </div>
@@ -81,37 +87,38 @@ const Contact = (props, contact) => {
   return (
     <contact className={ContactStyles.contact} id='contact'>
       <form>
-        <div className={ContactStyles.container}>
-          <input
-            value={fullname}
-            onChange={(e) => setFullname(e.target.value)}
-            type='text'
-          />
-          <label>Name</label>
-          {fullnameErrorDisplay}
-        </div>
+        <div className={ContactStyles.topContainer}>
+          <div className={ContactStyles.input}>
+            <label>Name</label>
+            <input
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
+              type='text'
+            />
+            {fullnameErrorDisplay}
+          </div>
+          <div className={ContactStyles.input}>
+            <label>Email</label>
+            <input
+              type='email'
+              onChange={(e) => setEmail(e.target.value)}
+              type='text'
+            />
 
-        <div className={ContactStyles.container}>
-          <input
-            type='email'
-            onChange={(e) => setEmail(e.target.value)}
-            type='text'
-          />
-          <label>Email</label>
-          {emailErrorDisplay}
+            {emailErrorDisplay}
+          </div>
         </div>
-
-        <div className={ContactStyles.container}>
+        <div className={ContactStyles.msgContainer}>
+          <label>Message</label>
           <textarea
             type='text'
             onChange={(e) => setMsg(e.target.value)}
             type='text'
           ></textarea>
-          <label>Message</label>
           {messageErrorDisplay}
         </div>
 
-        <div className='submit'>
+        <div className={ContactStyles.submit}>
           <a className={ContactStyles.btn} onClick={onSubmit}>
             Send message
           </a>

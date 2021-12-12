@@ -9,9 +9,9 @@ export default async function getAboutinfoById(
 
   if (req.method === 'PUT') {
     await db.run(
-      `update aboutinfo set title = ?, infotext = ?, where id = ?`,
+      `update aboutinfo set title = ?, info_text = ? where id = ?`,
       req.body.title,
-      req.body.infotext,
+      req.body.info_text,
       req.query.id
     );
   }

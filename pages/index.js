@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Projects from '../components/Projects';
 import About from '../components/About';
 import Contact from '../components/Contact';
-import Links from '../components/Links';
 import { server } from '../config/server';
 import { importDb } from '../config/db';
 import { useState } from 'react';
@@ -33,8 +32,6 @@ export default function Home({ projects, about, contact, initMessages }) {
       <About about={about} />
       <Projects projects={projects} />
       <Contact contact={contact} onSubmit={onSubmitNewMessage} />
-      <Links />
-      {/* <Skills /> */}
       <script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons.js'></script>
     </div>
   );

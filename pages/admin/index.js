@@ -1,25 +1,34 @@
 import { importDb } from '../../config/db';
 import ProjectForm from '../../components/ProjectForm';
 import { server } from '../../config/server';
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import AdminStyles from '../../styles/Admin.module.css';
 import Head from 'next/head';
 
 const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
+  const [update, setUpdate] = useState(false);
+
+  useEffect(() => {
+    if (update === true) {
+      setTimeout(() => {
+        setUpdate(false);
+        window.location.reload();
+      }, 3000);
+    }
+  }, [update]);
 
   async function onAddNewProject(newProject) {
-    const response = await fetch(`${server}/api/projects`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newProject),
-    });
-    const newProjects = await response.json();
-    setProjects(newProjects);
+    // const response = await fetch(`${server}/api/projects`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(newProject),
+    // });
+    // const newProjects = await response.json();
+    // setProjects(newProjects);
   }
 
   async function onDeleteProject(id) {
@@ -29,6 +38,7 @@ const admin = ({ initProjects, initInfos }) => {
         'Content-Type': 'application/json',
       },
     });
+    setUpdate(true);
   }
 
   return (
@@ -55,8 +65,8 @@ const admin = ({ initProjects, initInfos }) => {
             <div className={AdminStyles.project} key={index} project={project}>
               <p className={AdminStyles.title}>{project.title}</p>
               <p>{project.about}</p>
-              <p>{project.mobile_image}</p>
-              <p>{project.tablet_image}</p>
+              {/* <p>{project.mobile_image}</p>
+              <p>{project.tablet_image}</p> */}
               <p>{project.desktop_image}</p>
               <p>{project.websitelink}</p>
               <p>{project.gitlink}</p>

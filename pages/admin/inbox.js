@@ -51,58 +51,60 @@ const inbox = ({ initMessages }) => {
           crossorigin='anonymous'
         ></script>
       </Head>
-      <h2>messages, inbox</h2>
+      <h2 className={InboxStyles.title}>Inbox</h2>
 
-      <div className={InboxStyles.inboxcontainer}>
-        <table className={InboxStyles.table}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Message</th>
-              <th>created</th>
-              <th>Read</th>
-              <th>Delete</th>
+      <table className={InboxStyles.table}>
+        <thead className={InboxStyles.thead}>
+          <tr className={InboxStyles.tr}>
+            <th className={InboxStyles.thName}>Name</th>
+            <th className={InboxStyles.th}>Email</th>
+            <th className={InboxStyles.th}>Message</th>
+            <th className={InboxStyles.th}>Sent</th>
+            <th className={InboxStyles.th}>Read</th>
+            <th className={InboxStyles.th}>Delete</th>
+          </tr>
+        </thead>
+        <tbody className={InboxStyles.body}>
+          {messages.map((message, index) => (
+            <tr className={InboxStyles.tr} key={index} message={message}>
+              <td className={InboxStyles.tdName}>
+                <span className={InboxStyles.span}>{message.fullname}</span>
+              </td>
+              <td className={InboxStyles.td}>
+                <span className={InboxStyles.span}>{message.email}</span>
+              </td>
+              <td className={InboxStyles.td}>
+                <span className={InboxStyles.span}>{message.msg}</span>
+              </td>
+              <td className={InboxStyles.td}>
+                <span className={InboxStyles.span}>{message.created_at}</span>
+              </td>
+              <td className={InboxStyles.td}>
+                <a className={InboxStyles.i} onClick={() => onSubmit(message)}>
+                  {message.seen === 1 ? (
+                    <i className='far fa-envelope'></i>
+                  ) : (
+                    <i className='far fa-envelope-open'></i>
+                  )}
+                </a>
+              </td>
+              <td className={InboxStyles.td}>
+                <a
+                  className={InboxStyles.i}
+                  onClick={() => onDeleteMessage(message.id)}
+                >
+                  <i className='fas fa-trash'></i>
+                </a>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {messages.map((message, index) => (
-              <tr key={index} message={message}>
-                <td>
-                  <span>{message.fullname}</span>
-                </td>
-                <td>
-                  <span>{message.email}</span>
-                </td>
-                <td>
-                  <span>{message.msg}</span>
-                </td>
-                <td>
-                  <span>{message.created_at}</span>
-                </td>
-                <td>
-                  <a onClick={() => onSubmit(message)}>
-                    {message.seen === 1 ? (
-                      <i class='far fa-envelope'></i>
-                    ) : (
-                      <i class='far fa-envelope-open'></i>
-                    )}
-                  </a>
-                </td>
-                <td>
-                  <a onClick={() => onDeleteMessage(message.id)}>
-                    Delete from inbox
-                  </a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          ))}
+        </tbody>
+      </table>
+      <div className={InboxStyles.buttonContainer}>
+        <a href='/admin' className={InboxStyles.button}>
+          Back to admin panel
+        </a>
       </div>
-
-      <Link href='/admin' className={InboxStyles.backbtn}>
-        Back to admin panel
-      </Link>
     </div>
   );
 };

@@ -56,7 +56,10 @@
   border-radius: 5px;
   margin-bottom: 30px;
 }
-.admin .button {
+.admin .title {
+  font-weight: bold;
+}
+.button {
   display: inline-block;
   border: 0;
   background: var(--blue);
@@ -70,12 +73,34 @@
   margin-right: 20px;
   cursor: pointer;
 }
-.admin .button:hover {
+.button:hover {
   transform: scale(0.98);
 }
-.admin .buttonContainer {
+.buttonContainer {
   text-align: right;
 }
-.admin .title {
+.editAbout {
+  font-family: 'Montserrat';
+  background: var(--darkest-grey);
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px;
+  color: var(--middle-grey);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+.editAbout div {
+  text-transform: uppercase;
   font-weight: bold;
+  margin-bottom: 5px;
+}
+.editAbout .input {
+  margin-bottom: 30px;
+  border-style: none;
+  min-height: 25px;
+  width: 200px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Montserrat';
 }
