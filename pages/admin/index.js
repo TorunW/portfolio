@@ -4,6 +4,7 @@ import { server } from '../../config/server';
 import { useState, useEffect } from 'react';
 import AdminStyles from '../../styles/Admin.module.css';
 import Head from 'next/head';
+// import { getSession } from 'next-auth/react';
 
 const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
@@ -115,13 +116,28 @@ const admin = ({ initProjects, initInfos }) => {
 
 export default admin;
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
+  // const session = await getSession(context);
+
+  // if (!session) {
+  //   return {
+  //     redirect: {
+  //       destination: '/',
+  //       permanent: false,
+  //     },
+  //   };
+  // }
+
   const db = await importDb();
   const projects = await db.all('select * from project');
   const infos = await db.all('select * from aboutinfo');
 
   return {
-    props: { initProjects: projects, initInfos: infos },
+    props: {
+      // session,
+      initProjects: projects,
+      initInfos: infos,
+    },
   };
 };
 

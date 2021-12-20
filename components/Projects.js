@@ -14,12 +14,14 @@ const Projects = ({ projects }) => {
               <div className={ProjectsStyles.text}>
                 <h2>{p.title}</h2>
                 <p>{p.about}</p>
-                <a href={p.website_link} className={ProjectsStyles.btn}>
-                  Visit website
-                </a>
-                <a href={p.git_link} className={ProjectsStyles.btn}>
-                  Github repository
-                </a>
+                <div className={ProjectsStyles.buttonContainer}>
+                  <a href={p.website_link} className={ProjectsStyles.btn}>
+                    Visit website
+                  </a>
+                  <a href={p.git_link} className={ProjectsStyles.btn}>
+                    Github repository
+                  </a>
+                </div>
               </div>
             </section>
           ))}

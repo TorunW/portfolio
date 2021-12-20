@@ -32,12 +32,16 @@ const About = ({ about }) => {
             <h1 className={aboutStyles.h2}>{a.title}</h1>
             {a.info_text}
             <div className={aboutStyles.buttonContainer}>
-              <a className={aboutStyles.firstbtn}>
-                <i className='fas fa-envelope'></i>Email
-              </a>
+              {/* <a className={aboutStyles.firstbtn}>
+                <i
+                  className='fas fa-envelope'
+                  href='mailto:torun.wikstrom@gmail.com'
+                ></i>
+                Email
+              </a> */}
               <a
                 className={aboutStyles.firstbtn}
-                href='linkedin.com/in/torun-alenius-a77011220'
+                href='https://www.linkedin.com/in/torun-alenius-a77011220/'
               >
                 <i className='fab fa-linkedin'></i>LinkedIn
               </a>
@@ -45,9 +49,9 @@ const About = ({ about }) => {
                 <i className='fab fa-github'></i>github
               </a>
 
-              <a className={aboutStyles.btn}>
+              {/* <a className={aboutStyles.btn}>
                 <i class='fas fa-file-alt'></i>Resume
-              </a>
+              </a> */}
             </div>
           </div>
         ))}
