@@ -4,12 +4,15 @@ import { server } from '../../config/server';
 import { useState, useEffect } from 'react';
 import AdminStyles from '../../styles/Admin.module.css';
 import Head from 'next/head';
-// import { getSession } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
 
 const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
   const [update, setUpdate] = useState(false);
+  const { data: session } = useSession();
 
   useEffect(() => {
     if (update === true) {
@@ -20,17 +23,7 @@ const admin = ({ initProjects, initInfos }) => {
     }
   }, [update]);
 
-  async function onAddNewProject(newProject) {
-    // const response = await fetch(`${server}/api/projects`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(newProject),
-    // });
-    // const newProjects = await response.json();
-    // setProjects(newProjects);
-  }
+  async function onAddNewProject(newProject) {}
 
   async function onDeleteProject(id) {
     await fetch(`${server}/api/project/${id}`, {
@@ -57,6 +50,7 @@ const admin = ({ initProjects, initInfos }) => {
             <i class='fas fa-envelope'></i>
             <div>Inbox</div>
           </a>
+          <a href='/api/auth/signout'>Signout</a>
         </div>
         <ProjectForm onSubmit={onAddNewProject} />
 
@@ -117,38 +111,26 @@ const admin = ({ initProjects, initInfos }) => {
 export default admin;
 
 export const getServerSideProps = async (context) => {
-  // const session = await getSession(context);
+  const session = await getSession(context);
 
-  // if (!session) {
-  //   return {
-  //     redirect: {
-  //       destination: '/',
-  //       permanent: false,
-  //     },
-  //   };
-  // }
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/api/auth/signin',
+        permanent: false,
+      },
+    };
+  } else {
+    const db = await importDb();
+    const projects = await db.all('select * from project');
+    const infos = await db.all('select * from aboutinfo');
 
-  const db = await importDb();
-  const projects = await db.all('select * from project');
-  const infos = await db.all('select * from aboutinfo');
-
-  return {
-    props: {
-      // session,
-      initProjects: projects,
-      initInfos: infos,
-    },
-  };
+    return {
+      props: {
+        session,
+        initProjects: projects,
+        initInfos: infos,
+      },
+    };
+  }
 };
-
-// async function onEditAbout(newAbout) {
-//   const response = await fetch(`${server}/api/about`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(newAbout),
-//   });
-//   const newAboutText = await response.json();
-//   setInfos(newAboutText);
-// }
