@@ -27,6 +27,11 @@
   font-size: 15px;
   font-weight: 500;
 }
+.projectform .container .textarea {
+  height: 300px;
+  font-family: 'Montserrat';
+  width: 300px;
+}
 .projectform .container .imageUploader {
   background: var(--dark-grey);
   border-radius: 5px;

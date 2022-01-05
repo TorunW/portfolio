@@ -73,9 +73,9 @@
 :root {
   --light-red: #c7493a;
   --dark-red: #a33327;
-  --very-dark: rgb(33 10 8);
+  --very-dark: #000000a6;
   --green: #689775;
-  --dark-pink: #907163;
+  --dark-pink: #87747e;
   --light-pink: #b88a7c;
 
   --light-grey: #dee2e6;

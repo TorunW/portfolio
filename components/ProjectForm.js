@@ -9,12 +9,6 @@ const ProjectForm = (props) => {
   const project = props.project;
   const [title, setTitle] = useState(project ? project.title : '');
   const [about, setAbout] = useState(project ? project.about : '');
-  // const [mobileImage, setMobileImage] = useState(
-  //   project ? project.mobileImage : ''
-  // );
-  // const [tabletImage, setTabletImage] = useState(
-  //   project ? project.tabletImage : ''
-  // );
   const [desktopImage, setDesktopImage] = useState(
     project ? project.desktop_image : ''
   );
@@ -38,8 +32,6 @@ const ProjectForm = (props) => {
     let newProject = {
       title,
       about,
-      // mobile_image: mobileImage,
-      // tablet_image: tabletImage,
       desktop_image: desktopImage,
       website_link: websiteLink,
       git_link: gitLink,
@@ -75,30 +67,23 @@ const ProjectForm = (props) => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <div className={EditStyles.title}>Description</div>
-        <input
-          className={EditStyles.input}
+        <textarea
+          className={EditStyles.textarea}
           value={about}
           onChange={(e) => setAbout(e.target.value)}
         />
-
-        {/* <div className={EditStyles.title}>Mobile</div>
-        <ImageUploader
-          className={EditStyles.imageUploader}
-          image={mobileImage}
-          onSetImage={setMobileImage}
-        /> */}
-        {/* <div>Tablet</div>
-        <ImageUploader image={tabletImage} onSetImage={setTabletImage} /> */}
         <div className={EditStyles.title}>Desktop</div>
         <ImageUploader
           className={EditStyles.imageUploader}
           image={desktopImage}
+          value={desktopImage}
           onSetImage={setDesktopImage}
         />
         <div className={EditStyles.title}>Link to Website</div>
         <input
           className={EditStyles.input}
           value={websiteLink}
+          type='text'
           onChange={(e) => setWebsiteLink(e.target.value)}
         />
         <div className={EditStyles.title}>Link to Github</div>
