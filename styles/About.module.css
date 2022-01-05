@@ -74,7 +74,7 @@
     background: rgba(255, 255, 255, 0.158);
   }
 }
-@media (max-width: 999px) {
+@media (min-width: 751px) and (max-width: 999px) {
   .about .container {
     position: relative;
   }
@@ -176,29 +176,22 @@
     background: var(--dark-pink);
     display: flex;
     justify-content: center;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
   .about .contentContainer .content {
     background: #2b2020;
-    width: 85%;
-    padding: 30px;
+    width: 95%;
+    padding: 20px;
     border-radius: 5px;
     color: #fff;
     font-family: 'Montserrat';
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.7em;
   }
   .about .contentContainer .content h1 {
     color: var(--green);
     text-transform: uppercase;
     font-family: 'Montserrat';
-  }
-  .about .contentContainer .buttonContainer {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-  }
-  .about .contentContainer .buttonContainer .firstbtn {
-    grid-row: 1;
   }
   .about .contentContainer .buttonContainer .firstbtn,
   .about .contentContainer .buttonContainer .btn {
@@ -212,7 +205,7 @@
     font-size: 16px;
     margin-top: 10px;
     cursor: pointer;
-    width: 150px;
+    width: 100%;
     align-items: center;
   }
   .about .contentContainer .buttonContainer .firstbtn i,

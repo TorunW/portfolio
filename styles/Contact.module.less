@@ -17,6 +17,10 @@
       padding: 30px 60px;
       grid-gap: 20px;
 
+      h2 {
+        color: var(--green);
+      }
+
       .topContainer {
         grid-row: 1;
         display: grid;
@@ -117,6 +121,10 @@
       padding: 30px 40px;
       grid-gap: 20px;
 
+      h2 {
+        color: var(--green);
+      }
+
       .topContainer {
         grid-row: 1;
         display: grid;
@@ -198,6 +206,11 @@
     }
   }
 }
+.contact {
+  p {
+    color: white;
+  }
+}
 
 @media (max-width: 750px) {
   .contact {
@@ -211,13 +224,19 @@
       width: 90%;
       border-radius: 5px;
       height: 100%;
-      padding: 20px 60px;
-      margin: 50px 0;
+      padding: 20px 20px;
+      margin: 20px 0;
+
+      h2 {
+        color: var(--green);
+        text-transform: uppercase;
+      }
+
       .topContainer {
-        width: 70%;
+        width: 100%;
 
         .input {
-          margin-top: 30px;
+          margin-top: 20px;
           label {
             color: var(--green);
             font-size: 18px;
@@ -231,7 +250,7 @@
             border-style: none;
             border-radius: 5px;
             height: 35px;
-            margin: 20px 70px 0 0;
+            margin: 10px 70px 0 0;
             font-family: 'Montserrat';
             font-size: 16px;
             padding-left: 10px;
@@ -259,7 +278,7 @@
           font-weight: 500;
           font-size: 14px;
           height: 200px;
-          margin-top: 20px;
+          margin-top: 10px;
         }
       }
 

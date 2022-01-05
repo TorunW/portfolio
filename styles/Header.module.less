@@ -22,3 +22,33 @@
     color: var(--dark-pink);
   }
 }
+
+@media (max-width: 700px) {
+  .header {
+    background: url('/uploads/headerimgn.jpg');
+    background-position: -380px; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    background-attachment: fixed;
+
+    div {
+      font-family: 'Montserrat';
+      font-size: 40px;
+      font-weight: 300;
+      color: var(--dark-pink);
+      position: relative;
+      z-index: 3;
+      padding: 20vh 5vw;
+    }
+    b {
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    .dot {
+      color: var(--dark-pink);
+    }
+  }
+}

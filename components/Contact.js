@@ -87,6 +87,11 @@ const Contact = (props, contact) => {
   return (
     <contact className={ContactStyles.contact} id='contact'>
       <form>
+        <h2>Send me a message</h2>
+        <p>
+          If you have any questions or would like to work me, don't hesitate to
+          write me a message!
+        </p>
         <div className={ContactStyles.topContainer}>
           <div className={ContactStyles.input}>
             <label>Name</label>

@@ -24,7 +24,7 @@ const Nav = () => {
                 .scrollIntoView({ behavior: 'smooth' })
             }
           >
-            Projects
+            My Projects
           </a>
         </li>
         <li>
