@@ -1,6 +1,6 @@
 .header {
-  background: url('/uploads/h.jpg') no-repeat center center / cover;
-  height: 630px;
+  background: url('/uploads/headerimgn.jpg') no-repeat center center / cover;
+  height: 100vh;
   position: relative;
   background-attachment: fixed;
 }

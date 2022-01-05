@@ -1,4 +1,4 @@
-@media (min-width: 1001px) {
+@media (min-width: 1201px) {
   .projects {
     margin-top: 300px;
     height: 100%;
@@ -8,7 +8,6 @@
     background: #161616;
     padding-top: 40px;
     padding-bottom: 40px;
-    height: 100%;
   }
   .projects .container h1 {
     font-family: 'Montserrat';
@@ -19,20 +18,12 @@
   .projects .container .projectContainer {
     background-color: #2b2020;
     display: grid;
-    grid-template-columns: 40% 60%;
-    grid-gap: 60px;
-    height: 100%;
-    width: 90%;
+    grid-template-rows: auto auto 40px;
+    width: 65%;
     margin: 0 auto;
     margin-bottom: 30px;
     border-radius: 5px;
-    padding: 30px 0px 30px 40px;
-  }
-  .projects .container .projectContainer .pc {
-    max-height: 250px;
-  }
-  .projects .container .projectContainer .text {
-    padding-right: 40px;
+    padding: 50px 30px 30px;
   }
   .projects .container .projectContainer .text h2 {
     font-family: 'Montserrat';
@@ -42,24 +33,32 @@
     font-family: 'Montserrat';
     color: #fff;
   }
-  .projects .container .projectContainer .text .buttonContainer .btn {
+  .projects .container .projectContainer .pc {
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .projects .container .projectContainer .buttonContainer {
+    text-align: center;
+  }
+  .projects .container .projectContainer .buttonContainer .btn {
     display: inline-block;
     border: 0;
     background: rgba(255, 255, 255, 0.13);
     color: #fff;
     border-radius: 20px;
-    padding: 8px 20px;
+    padding: 8px 30px;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
-    margin-right: 2vw;
+    margin-right: 30px;
   }
-  .projects .container .projectContainer .text .buttonContainer .btn:hover {
+  .projects .container .projectContainer .buttonContainer .btn:hover {
     transform: scale(0.98);
     background: rgba(255, 255, 255, 0.158);
   }
 }
-@media (min-width: 751px) and (max-width: 1000px) {
+@media (min-width: 751px) and (max-width: 1200px) {
   .projects {
     margin-top: 300px;
     height: 100%;
