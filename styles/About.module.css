@@ -44,6 +44,7 @@
   .about .contentContainer .buttonContainer {
     display: grid;
     grid-template-rows: 1fr 1fr;
+    grid-template-columns: 192px;
   }
   .about .contentContainer .buttonContainer .firstbtn {
     grid-row: 1;
@@ -120,6 +121,7 @@
   .about .contentContainer .buttonContainer {
     display: grid;
     grid-template-rows: 1fr 1fr;
+    grid-template-columns: 192px;
   }
   .about .contentContainer .buttonContainer .firstbtn {
     grid-row: 1;

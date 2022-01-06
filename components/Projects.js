@@ -6,14 +6,13 @@ const Projects = ({ projects }) => {
     if (window.innerWidth >= 1001) {
       projectDisplay = (
         <div className={ProjectsStyles.container}>
-          <h1>Projects</h1>
+          <h1>My Projects</h1>
           {projects.map((p, i) => (
             <section key={i} p={p} className={ProjectsStyles.projectContainer}>
               <img className={ProjectsStyles.pc} src={p.desktop_image} />
-              {/* <img className={ProjectsStyles.mobile} src={p.mobile_image} /> */}
               <div className={ProjectsStyles.text}>
                 <h2>{p.title}</h2>
-                <p>{p.about}</p>
+                <div dangerouslySetInnerHTML={{ __html: p.about }}></div>
                 <div className={ProjectsStyles.buttonContainer}>
                   <a href={p.website_link} className={ProjectsStyles.btn}>
                     Visit website
@@ -31,12 +30,12 @@ const Projects = ({ projects }) => {
       console.log('small window');
       projectDisplay = (
         <div className={ProjectsStyles.container}>
-          <h1>Projects</h1>
+          <h1>My Projects</h1>
           {projects.map((p, i) => (
             <section key={i} p={p} className={ProjectsStyles.projectContainer}>
               <div className={ProjectsStyles.text}>
                 <h2>{p.title}</h2>
-                <p>{p.about}</p>
+                <div dangerouslySetInnerHTML={{ __html: p.about }}></div>
               </div>
               <img className={ProjectsStyles.pc} src={p.desktop_image} />
               {/* <img className={ProjectsStyles.mobile} src={p.mobile_image} /> */}
