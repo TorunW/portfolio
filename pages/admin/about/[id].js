@@ -2,6 +2,8 @@ import { importDb } from '../../../config/db';
 import { useState } from 'react';
 import { server } from '../../../config/server';
 import { useEffect } from 'react/cjs/react.development';
+import TextEditor from '../../../components/textEditor';
+
 import AdminStyles from '../../../styles/Admin.module.css';
 
 const aboutinfoView = ({ aboutinfo }) => {
@@ -39,18 +41,15 @@ const aboutinfoView = ({ aboutinfo }) => {
   return (
     <div>
       <div className={AdminStyles.editAbout}>
-        <div>title</div>
+        <div className={AdminStyles.title}>title</div>
         <input
           className={AdminStyles.input}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <div>description</div>
-        <textarea
-          className={AdminStyles.input}
-          value={infoText}
-          onChange={(e) => setInfoText(e.target.value)}
-        />
+        <div className={AdminStyles.title}>description</div>
+
+        <TextEditor content={infoText} onUpdate={setInfoText} />
         <div className={AdminStyles.buttonContainer}>
           <button className={AdminStyles.button} onClick={() => onSave(id)}>
             Save Changes

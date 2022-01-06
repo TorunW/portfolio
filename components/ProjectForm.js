@@ -4,6 +4,8 @@ import ImageUploader from './ImageUploader';
 import { server } from '../config/server';
 import EditStyles from '../styles/EditProject.module.css';
 import Link from 'next/link';
+import TextEditor from './textEditor';
+import Head from 'next/head';
 
 const ProjectForm = (props) => {
   const project = props.project;
@@ -67,11 +69,8 @@ const ProjectForm = (props) => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <div className={EditStyles.title}>Description</div>
-        <textarea
-          className={EditStyles.textarea}
-          value={about}
-          onChange={(e) => setAbout(e.target.value)}
-        />
+
+        <TextEditor content={about} onUpdate={setAbout} />
         <div className={EditStyles.title}>Desktop</div>
         <ImageUploader
           className={EditStyles.imageUploader}

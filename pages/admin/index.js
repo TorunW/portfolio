@@ -59,9 +59,7 @@ const admin = ({ initProjects, initInfos }) => {
           {projects.map((project, index) => (
             <div className={AdminStyles.project} key={index} project={project}>
               <p className={AdminStyles.title}>{project.title}</p>
-              <p>{project.about}</p>
-              {/* <p>{project.mobile_image}</p>
-              <p>{project.tablet_image}</p> */}
+              <div dangerouslySetInnerHTML={{ __html: project.about }}></div>
               <p>{project.desktop_image}</p>
               <p>{project.websitelink}</p>
               <p>{project.gitlink}</p>
@@ -92,7 +90,9 @@ const admin = ({ initProjects, initInfos }) => {
             aboutinfo={aboutinfo}
           >
             <p className={AdminStyles.title}>{aboutinfo.title}</p>
-            <p>{aboutinfo.info_text}</p>
+            <div
+              dangerouslySetInnerHTML={{ __html: aboutinfo.info_text }}
+            ></div>
             <div className={AdminStyles.buttonContainer}>
               <a
                 className={AdminStyles.button}

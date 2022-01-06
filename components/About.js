@@ -30,7 +30,7 @@ const About = ({ about }) => {
         {about.map((a, i) => (
           <div key={i} a={a} className={aboutStyles.content}>
             <h1 className={aboutStyles.h2}>{a.title}</h1>
-            {a.info_text}
+            <div dangerouslySetInnerHTML={{ __html: a.info_text }}></div>
             <div className={aboutStyles.buttonContainer}>
               <a
                 className={aboutStyles.firstbtn}
@@ -48,7 +48,10 @@ const About = ({ about }) => {
               <a className={aboutStyles.btn} href='https://github.com/TorunW'>
                 <i className='fab fa-github'></i>github
               </a>
-              <a className={aboutStyles.btn} href='https://torun-wikstrom.com/resume'>
+              <a
+                className={aboutStyles.btn}
+                href='https://torun-wikstrom.com/resume'
+              >
                 <i class='fas fa-file-alt'></i>Resume
               </a>
             </div>
