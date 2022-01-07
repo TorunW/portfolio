@@ -30,6 +30,7 @@
     "formidable": "^2.0.1",
     "next-auth": "^4.0.1",
     "sqlite": "^4.0.23",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "tiptap": "^1.32.2"
   }
 }
