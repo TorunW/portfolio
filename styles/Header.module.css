@@ -22,9 +22,8 @@
 }
 @media (max-width: 700px) {
   .header {
-    background: url("/uploads/headerimgn.jpg");
-    background-position: -490px;
-    /* Center the image */
+    background: url("/uploads/headerimgmobile.jpg");
+    background-position: center;
     background-repeat: no-repeat;
     /* Do not repeat the image */
     background-size: cover;
