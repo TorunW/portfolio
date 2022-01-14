@@ -1,25 +1,23 @@
-import { useState, useEffect } from 'react/cjs/react.development';
-import { getServerSideProps } from '../pages/admin';
-import ImageUploader from './ImageUploader';
-import { server } from '../config/server';
-import EditStyles from '../styles/EditProject.module.css';
-import Link from 'next/link';
-import TextEditor from './textEditor';
-import Head from 'next/head';
+import { useState, useEffect } from "react/cjs/react.development";
+import { getServerSideProps } from "../pages/admin";
+import ImageUploader from "./ImageUploader";
+import { server } from "../config/server";
+import EditStyles from "../styles/EditProject.module.css";
+import TextEditor from "./textEditor";
 
 const ProjectForm = (props) => {
   const project = props.project;
-  const [title, setTitle] = useState(project ? project.title : '');
-  const [about, setAbout] = useState(project ? project.about : '');
+  const [title, setTitle] = useState(project ? project.title : "");
+  const [about, setAbout] = useState(project ? project.about : "");
   const [desktopImage, setDesktopImage] = useState(
-    project ? project.desktop_image : ''
+    project ? project.desktop_image : ""
   );
   const [websiteLink, setWebsiteLink] = useState(
-    project ? project.website_link : ''
+    project ? project.website_link : ""
   );
-  const [gitLink, setGitLink] = useState(project ? project.git_link : '');
+  const [gitLink, setGitLink] = useState(project ? project.git_link : "");
   const [update, setUpdate] = useState(false);
-  console.log(update, 'update');
+  console.log(update, "update");
 
   useEffect(() => {
     if (update === true) {
@@ -40,15 +38,15 @@ const ProjectForm = (props) => {
     };
 
     let url = `${server}/api/projects`,
-      method = 'POST';
-    if (props.type === 'edit') {
+      method = "POST";
+    if (props.type === "edit") {
       url = `${server}/api/project/${project.id}`;
-      method = 'PUT';
+      method = "PUT";
     }
     const response = await fetch(url, {
       method,
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newProject),
     });
@@ -82,7 +80,7 @@ const ProjectForm = (props) => {
         <input
           className={EditStyles.input}
           value={websiteLink}
-          type='text'
+          type="text"
           onChange={(e) => setWebsiteLink(e.target.value)}
         />
         <div className={EditStyles.title}>Link to Github</div>
@@ -93,9 +91,9 @@ const ProjectForm = (props) => {
         />
         <div className={EditStyles.buttonContainer}>
           <a className={EditStyles.button} onClick={onSubmit}>
-            {props.type === 'edit' ? 'Edit' : 'Add'}
+            {props.type === "edit" ? "Edit" : "Add"}
           </a>
-          <a className={EditStyles.button} href='/admin'>
+          <a className={EditStyles.button} href="/admin">
             Back to admin panel
           </a>
         </div>

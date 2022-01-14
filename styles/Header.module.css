@@ -3,9 +3,10 @@
   height: 100vh;
   position: relative;
   background-attachment: fixed;
+  background-color: black;
 }
 .header div {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 80px;
   font-weight: 200;
   color: var(--dark-pink);

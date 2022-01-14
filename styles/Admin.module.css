@@ -1,5 +1,5 @@
 .admin {
-  font-family: 'Montserrat';
+  font-family: "Montserrat", sans-serif;
 }
 .admin .adminPage {
   background: var(--light-grey);
@@ -13,23 +13,21 @@
 .admin .header .h2 {
   margin: 0;
 }
-.admin .header .inbox {
+.admin .header .navButtonContainer {
   position: absolute;
   right: 0;
-  top: 0;
-}
-.admin .header .inbox div,
-.admin .header .inbox i {
-  float: right;
+  top: 3px;
   font-size: 20px;
-  margin-right: 10px;
-}
-.admin .header .inbox i {
-  margin-top: 5px;
-}
-.admin .header .inbox div {
-  margin-top: 3px;
   font-weight: 500;
+  display: flex;
+}
+.admin .header .navButtonContainer .navButton {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+.admin .header .navButtonContainer .navButton i {
+  margin-left: 5px;
 }
 .admin .sectionHeader {
   text-align: center;
@@ -80,7 +78,7 @@
   text-align: right;
 }
 .editAbout {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background: var(--darkest-grey);
   width: 60%;
   margin: 0 auto;
@@ -102,5 +100,5 @@
   width: 200px;
   font-size: 15px;
   font-weight: 500;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }

@@ -1,5 +1,5 @@
 .admin {
-  font-family: 'Montserrat';
+  font-family: "Montserrat", sans-serif;
   .adminPage {
     background: var(--light-grey);
   }
@@ -14,24 +14,22 @@
       margin: 0;
     }
 
-    .inbox {
+    .navButtonContainer {
       position: absolute;
       right: 0;
-      top: 0;
-      div,
-      i {
-        float: right;
-        font-size: 20px;
-        margin-right: 10px;
-      }
+      top: 3px;
+      font-size: 20px;
+      font-weight: 500;
+      display: flex;
 
-      i {
-        margin-top: 5px;
-      }
+      .navButton {
+        display: flex;
+        align-items: center;
+        margin-right: 25px;
 
-      div {
-        margin-top: 3px;
-        font-weight: 500;
+        i {
+          margin-left: 5px;
+        }
       }
     }
   }
@@ -91,7 +89,7 @@
 }
 
 .editAbout {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background: var(--darkest-grey);
   width: 60%;
   margin: 0 auto;
@@ -114,6 +112,6 @@
     width: 200px;
     font-size: 15px;
     font-weight: 500;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
   }
 }
