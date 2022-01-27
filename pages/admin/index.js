@@ -14,7 +14,7 @@ const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
   const [update, setUpdate] = useState(false);
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
   useEffect(() => {
     if (update === true) {
@@ -129,7 +129,7 @@ export default admin;
 
 export const getServerSideProps = async (context) => {
   
-  const session = await getSession(context);
+  // const session = await getSession(context);
   const { cookie } = context.req.headers; 
 
   let secWor;
@@ -151,7 +151,7 @@ export const getServerSideProps = async (context) => {
 
     return {
       props: {
-        session,
+        // session,
         initProjects: projects,
         initInfos: infos,
       },
