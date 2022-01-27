@@ -7,6 +7,7 @@ import Head from "next/head";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
+import  { setCookies, removeCookies } from 'cookies-next'
 
 const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
@@ -35,6 +36,17 @@ const admin = ({ initProjects, initInfos }) => {
     setUpdate(true);
   }
 
+  async function logout(){
+    const res = await fetch(`${server}/api/login/`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const response = await res.json()
+    window.location.href = "/"    
+  }
+
   return (
     <admin className={AdminStyles.admin}>
       <Head>
@@ -51,8 +63,8 @@ const admin = ({ initProjects, initInfos }) => {
               <div>Inbox</div>
               <i class="fas fa-envelope"></i>
             </a>
-            <a className={AdminStyles.navButton} href="/api/auth/signout">
-              Signout
+            <a className={AdminStyles.navButton} href="#" onClick={() => logout()}>
+              Logout
             </a>
           </div>
         </div>
@@ -115,12 +127,19 @@ const admin = ({ initProjects, initInfos }) => {
 export default admin;
 
 export const getServerSideProps = async (context) => {
+  
   const session = await getSession(context);
+  const { cookie } = context.req.headers; 
 
-  if (!session) {
+  let secWor;
+  if (cookie.indexOf(`torun-wikstrom.com:${process.env.SEC_USE}`) > -1){
+    secWor = cookie.split(`torun-wikstrom.com:${process.env.SEC_USE}`)[1].split('=')[1];
+  }
+
+  if (secWor !== process.env.SEC_WOR) {
     return {
       redirect: {
-        destination: "/api/auth/signin",
+        destination: "/login",
         permanent: false,
       },
     };

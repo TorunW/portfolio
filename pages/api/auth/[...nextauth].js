@@ -5,6 +5,7 @@ import { importDb } from '../../../config/db';
 let userAccount = {};
 
 export default NextAuth({
+  site:'https://www.torun-wikstrom.com',
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
