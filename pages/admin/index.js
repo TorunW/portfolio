@@ -4,10 +4,7 @@ import { server } from "../../config/server";
 import { useState, useEffect } from "react";
 import AdminStyles from "../../styles/Admin.module.css";
 import Head from "next/head";
-import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { useSession } from "next-auth/react";
-import  { setCookies, removeCookies } from 'cookies-next'
 
 const admin = ({ initProjects, initInfos }) => {
   const router = useRouter();
@@ -131,6 +128,7 @@ export const getServerSideProps = async (context) => {
   
   // const session = await getSession(context);
   const { cookie } = context.req.headers; 
+
 
   let secWor;
   if (cookie.indexOf(`torun-wikstrom.com:${process.env.SEC_USE}`) > -1){
