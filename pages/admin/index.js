@@ -10,6 +10,7 @@ import { useSession } from "next-auth/react";
 import  { setCookies, removeCookies } from 'cookies-next'
 
 const admin = ({ initProjects, initInfos }) => {
+  const router = useRouter();
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
   const [update, setUpdate] = useState(false);
@@ -37,14 +38,14 @@ const admin = ({ initProjects, initInfos }) => {
   }
 
   async function logout(){
-    const res = await fetch(`${server}/api/login/`, {
+    const res = await fetch(`/api/login/`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
     });
     const response = await res.json()
-    window.location.href = "/"    
+    router.push("/")  
   }
 
   return (

@@ -1,13 +1,18 @@
 import  { setCookies, removeCookies } from 'cookies-next'
+import { NextApiRequest, NextApiResponse } from 'next';
+
 import md5 from 'md5'
 
 export default async function (
-    req,
-    res
+    req = NextApiRequest,
+    res = NextApiResponse
   ) {
+
+
     if (req.method === "POST"){
       const { username, password } = req.body
       let success = false;
+
       if (username === process.env.SEC_USE && md5(password) === process.env.SEC_WOR){
         setCookies(`torun-wikstrom.com:${process.env.SEC_USE}`, process.env.SEC_WOR, { req, res, maxAge: 60 * 60 * 24 });
         success = true
@@ -22,5 +27,6 @@ export default async function (
       removeCookies(`torun-wikstrom.com:${process.env.SEC_USE}`, { req, res });
       res.json({message:"logged out"})
     }
+  
   }
   

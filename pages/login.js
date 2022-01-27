@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { server } from '../config/server'
-import { getCookies, setCookies, removeCookies } from 'cookies-next';
+import { getCookies } from 'cookies-next';
+import { useRouter } from 'next/router'
 
 function Login(){
-
+    const router = useRouter();
     const [ username, setUsername ] = useState('')
     const [ password, setPassword] = useState('')
 
@@ -12,8 +13,8 @@ function Login(){
     },[])
 
     async function login(){
-        console.log(username,password)
-        const res = await fetch(`${server}/api/login/`, {
+
+        const res = await fetch(`/api/login/`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -24,9 +25,9 @@ function Login(){
             })
         });
         const response = await res.json()
-        console.log(getCookies())
+
         if (response.success === true){
-            window.location.href = "/admin"
+            router.push("/admin") 
         }
     }
 
