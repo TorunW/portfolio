@@ -1,17 +1,19 @@
 import { importDb } from "../../config/db";
-import ProjectForm from "../../components/ProjectForm";
 import { server } from "../../config/server";
 import { useState, useEffect } from "react";
 import AdminStyles from "../../styles/Admin.module.css";
 import Head from "next/head";
+import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import ProjectForm from "../../components/ProjectForm";
 
 const admin = ({ initProjects, initInfos }) => {
   const router = useRouter();
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
   const [update, setUpdate] = useState(false);
-  // const { data: session } = useSession();
+  const { data: session } = useSession();
 
   useEffect(() => {
     if (update === true) {
@@ -34,17 +36,6 @@ const admin = ({ initProjects, initInfos }) => {
     setUpdate(true);
   }
 
-  async function logout(){
-    const res = await fetch(`/api/login/`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const response = await res.json()
-    router.push("/")  
-  }
-
   return (
     <admin className={AdminStyles.admin}>
       <Head>
@@ -61,8 +52,8 @@ const admin = ({ initProjects, initInfos }) => {
               <div>Inbox</div>
               <i class="fas fa-envelope"></i>
             </a>
-            <a className={AdminStyles.navButton} href="#" onClick={() => logout()}>
-              Logout
+            <a className={AdminStyles.navButton} href="/api/auth/signout">
+              Signout
             </a>
           </div>
         </div>
@@ -126,7 +117,7 @@ export default admin;
 
 export const getServerSideProps = async (context) => {
   
-  // const session = await getSession(context);
+  const session = await getSession(context);
   const { cookie } = context.req.headers; 
 
 
@@ -135,10 +126,10 @@ export const getServerSideProps = async (context) => {
     secWor = cookie.split(`torun-wikstrom.com:${process.env.SEC_USE}`)[1].split('=')[1];
   }
 
-  if (secWor !== process.env.SEC_WOR) {
+  if (!session) {
     return {
       redirect: {
-        destination: "/login",
+        destination: "/api/auth/signin",
         permanent: false,
       },
     };
@@ -149,7 +140,7 @@ export const getServerSideProps = async (context) => {
 
     return {
       props: {
-        // session,
+        session,
         initProjects: projects,
         initInfos: infos,
       },
