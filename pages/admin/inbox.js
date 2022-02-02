@@ -11,7 +11,7 @@ const inbox = ({ initMessages }) => {
   async function onSubmit(message) {
     message.seen = message.seen === 1 ? 0 : 1;
 
-    const response = await fetch(`${server}/api/message/${message.id}`, {
+    const response = await fetch(`/api/message/${message.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ const inbox = ({ initMessages }) => {
   }
 
   async function getMessages() {
-    const response = await fetch(`${server}/api/messages`, {
+    const response = await fetch(`/api/messages`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const inbox = ({ initMessages }) => {
   }
 
   async function onDeleteMessage(id) {
-    await fetch(`${server}/api/message/${id}`, {
+    await fetch(`/api/message/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

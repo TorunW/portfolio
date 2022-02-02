@@ -9,7 +9,6 @@ import { useSession } from "next-auth/react";
 import ProjectForm from "../../components/ProjectForm";
 
 const admin = ({ initProjects, initInfos }) => {
-  const router = useRouter();
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
   const [update, setUpdate] = useState(false);
@@ -27,7 +26,7 @@ const admin = ({ initProjects, initInfos }) => {
   async function onAddNewProject(newProject) {}
 
   async function onDeleteProject(id) {
-    await fetch(`${server}/api/project/${id}`, {
+    await fetch(`/api/project/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -118,14 +117,7 @@ export default admin;
 export const getServerSideProps = async (context) => {
   
   const session = await getSession(context);
-  const { cookie } = context.req.headers; 
-
-
-  let secWor;
-  if (cookie.indexOf(`torun-wikstrom.com:${process.env.SEC_USE}`) > -1){
-    secWor = cookie.split(`torun-wikstrom.com:${process.env.SEC_USE}`)[1].split('=')[1];
-  }
-
+  
   if (!session) {
     return {
       redirect: {

@@ -27,7 +27,7 @@ const aboutinfoView = ({ aboutinfo }) => {
       info_text: infoText,
     };
 
-    const response = await fetch(`${server}/api/about/${id}`, {
+    const response = await fetch(`/api/about/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

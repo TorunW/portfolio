@@ -13,7 +13,8 @@ export default function Home({ projects, about, contact, initMessages }) {
   const [messages, setMessages] = useState(initMessages);
 
   async function onSubmitNewMessage(newMessage) {
-    const response = await fetch(`${server}/api/messages`, {
+    console.log(server,'server')
+    const response = await fetch(`/api/messages`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
