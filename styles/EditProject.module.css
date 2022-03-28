@@ -1,6 +1,5 @@
 .projectform {
   height: 100%;
-  font-family: "Montserrat";
 }
 .projectform .h2 {
   text-align: center;
@@ -29,7 +28,6 @@
 }
 .projectform .container .textarea {
   height: 300px;
-  font-family: "Montserrat";
   width: 300px;
 }
 .projectform .container .textEditor .is-active {

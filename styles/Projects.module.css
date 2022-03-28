@@ -1,185 +1,107 @@
+.projects {
+  margin-top: 300px;
+  height: 100%;
+}
+.projects .container {
+  width: 100%;
+  background: var(--very-dark);
+}
+.projects .container h1 {
+  font-family: "Montserrat";
+  text-align: center;
+  color: var(--light-red);
+  text-transform: uppercase;
+}
+.projects .container .projectContainer {
+  background-color: var(--dark);
+  display: grid;
+  grid-template-rows: auto auto 40px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+.projects .container .projectContainer .text {
+  margin-bottom: 20px;
+}
+.projects .container .projectContainer .text h2 {
+  color: var(--light-red);
+}
+.projects .container .projectContainer .text p {
+  color: #fff;
+}
+.projects .container .projectContainer .pc {
+  max-height: 100%;
+  max-width: 100%;
+}
+.projects .container .projectContainer .buttonContainer {
+  text-align: center;
+}
+.projects .container .projectContainer .buttonContainer .btn {
+  display: inline-block;
+  border: 0;
+  background: rgba(255, 255, 255, 0.13);
+  color: #fff;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.projects .container .projectContainer .buttonContainer .btn:hover {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.158);
+}
 @media (min-width: 1201px) {
-  .projects {
-    margin-top: 300px;
-    height: 100%;
-  }
   .projects .container {
-    width: 100%;
-    background: var(--very-dark);
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .projects .container h1 {
-    font-family: "Montserrat";
-    text-align: center;
-    color: var(--light-red);
-    text-transform: uppercase;
-  }
   .projects .container .projectContainer {
-    background-color: var(--dark);
-    display: grid;
-    grid-template-rows: auto auto 40px;
     width: 65%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-radius: 5px;
     padding: 50px 30px 30px;
   }
-  .projects .container .projectContainer .text {
-    margin-bottom: 20px;
-  }
-  .projects .container .projectContainer .text h2 {
-    font-family: "Montserrat";
-    color: var(--light-red);
-  }
-  .projects .container .projectContainer .text p {
-    font-family: "Montserrat";
-    color: #fff;
-  }
   .projects .container .projectContainer .pc {
-    max-height: 100%;
-    max-width: 100%;
     margin: 0 auto;
   }
-  .projects .container .projectContainer .buttonContainer {
-    text-align: center;
-  }
   .projects .container .projectContainer .buttonContainer .btn {
-    display: inline-block;
-    border: 0;
-    background: rgba(255, 255, 255, 0.13);
-    color: #fff;
-    border-radius: 20px;
     padding: 8px 30px;
-    text-transform: uppercase;
-    font-weight: bold;
     font-size: 14px;
     margin-right: 30px;
-  }
-  .projects .container .projectContainer .buttonContainer .btn:hover {
-    transform: scale(0.98);
-    background: rgba(255, 255, 255, 0.158);
   }
 }
 @media (min-width: 751px) and (max-width: 1200px) {
-  .projects {
-    margin-top: 300px;
-    height: 100%;
-  }
   .projects .container {
-    width: 100%;
-    background: var(--very-dark);
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .projects .container h1 {
-    font-family: "Montserrat";
-    text-align: center;
-    color: var(--light-red);
-    text-transform: uppercase;
-  }
   .projects .container .projectContainer {
-    background-color: var(--dark);
-    display: grid;
-    grid-template-rows: auto auto 40px;
     width: 85%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-radius: 5px;
     padding: 20px 30px 30px;
   }
-  .projects .container .projectContainer .text {
-    margin-bottom: 20px;
-  }
-  .projects .container .projectContainer .text h2 {
-    font-family: "Montserrat";
-    color: var(--light-red);
-  }
-  .projects .container .projectContainer .text p {
-    font-family: "Montserrat";
-    color: #fff;
-  }
   .projects .container .projectContainer .pc {
-    max-height: 100%;
-    max-width: 100%;
     margin: 0 auto;
   }
-  .projects .container .projectContainer .buttonContainer {
-    text-align: center;
-  }
   .projects .container .projectContainer .buttonContainer .btn {
-    display: inline-block;
-    border: 0;
-    background: rgba(255, 255, 255, 0.13);
-    color: #fff;
-    border-radius: 20px;
     padding: 8px 30px;
-    text-transform: uppercase;
-    font-weight: bold;
     font-size: 14px;
     margin-right: 30px;
   }
-  .projects .container .projectContainer .buttonContainer .btn:hover {
-    transform: scale(0.98);
-    background: rgba(255, 255, 255, 0.158);
-  }
 }
 @media (max-width: 750px) {
-  .projects {
-    height: 100%;
-  }
   .projects .container {
-    background-color: var(--very-dark);
-    height: 100%;
     padding: 20px 0;
   }
   .projects .container h1 {
-    font-family: "Montserrat";
-    text-align: center;
-    color: var(--light-red);
-    text-transform: uppercase;
     margin-top: 0;
   }
   .projects .container .projectContainer {
-    background-color: var(--dark);
-    display: grid;
-    grid-template-rows: auto auto 40px;
     width: 90%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-radius: 5px;
     padding: 5px 15px 20px;
   }
-  .projects .container .projectContainer .text h2 {
-    font-family: "Montserrat";
-    color: var(---light-red);
-  }
-  .projects .container .projectContainer .text p {
-    font-family: "Montserrat";
-    color: #fff;
-  }
-  .projects .container .projectContainer .pc {
-    max-height: 100%;
-    max-width: 100%;
-  }
   .projects .container .projectContainer .buttonContainer {
-    text-align: center;
     margin: 10px 0;
   }
   .projects .container .projectContainer .buttonContainer .btn {
-    display: inline-block;
-    border: 0;
-    background: rgba(255, 255, 255, 0.13);
-    color: #fff;
-    border-radius: 20px;
     padding: 8px 12px;
-    text-transform: uppercase;
-    font-weight: bold;
     font-size: 13px;
     margin-right: 2vw;
-  }
-  .projects .container .projectContainer .buttonContainer .btn:hover {
-    transform: scale(0.98);
-    background: rgba(255, 255, 255, 0.158);
   }
 }

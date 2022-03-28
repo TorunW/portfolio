@@ -92,37 +92,39 @@ const Contact = (props, contact) => {
           If you have any questions or would like to work me, don't hesitate to
           write me a message!
         </p>
-        <div className={ContactStyles.topContainer}>
-          <div className={ContactStyles.input}>
-            <label>Name</label>
-            <input
-              value={fullname}
-              onChange={(e) => setFullname(e.target.value)}
+        <div className={ContactStyles.contentContainer}>
+          <div className={ContactStyles.topContainer}>
+            <div className={ContactStyles.input}>
+              <label>Name</label>
+              <input
+                value={fullname}
+                onChange={(e) => setFullname(e.target.value)}
+                type="text"
+              />
+              {fullnameErrorDisplay}
+            </div>
+            <div className={ContactStyles.input}>
+              <label>Email</label>
+              <input type="email" onChange={(e) => setEmail(e.target.value)} />
+
+              {emailErrorDisplay}
+            </div>
+          </div>
+          <div className={ContactStyles.msgContainer}>
+            <label>Message</label>
+            <textarea
               type="text"
-            />
-            {fullnameErrorDisplay}
+              onChange={(e) => setMsg(e.target.value)}
+            ></textarea>
+            {messageErrorDisplay}
           </div>
-          <div className={ContactStyles.input}>
-            <label>Email</label>
-            <input type="email" onChange={(e) => setEmail(e.target.value)} />
 
-            {emailErrorDisplay}
+          <div className={ContactStyles.submit}>
+            <a className={ContactStyles.btn} onClick={onSubmit}>
+              Send message
+            </a>
+            {displaySuccessMessage}
           </div>
-        </div>
-        <div className={ContactStyles.msgContainer}>
-          <label>Message</label>
-          <textarea
-            type="text"
-            onChange={(e) => setMsg(e.target.value)}
-          ></textarea>
-          {messageErrorDisplay}
-        </div>
-
-        <div className={ContactStyles.submit}>
-          <a className={ContactStyles.btn} onClick={onSubmit}>
-            Send message
-          </a>
-          {displaySuccessMessage}
         </div>
       </form>
     </contact>

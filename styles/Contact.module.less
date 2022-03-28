@@ -1,31 +1,24 @@
-@media (min-width: 1001px) {
-  .contact {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    background: var(--very-dark);
-    font-family: "Montserrat";
+.contact {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--very-dark);
+  h2 {
+    color: var(--light-red);
+    text-transform: uppercase;
+  }
 
-    form {
-      height: auto;
+  p {
+    color: white;
+  }
+
+  form {
+    .contentContainer {
       background-color: var(--dark-red);
-      width: 60%;
-      // display: grid;
-      // grid-template-rows: auto 60px 250px 100px;
-      margin: 40px 0;
       border-radius: 5px;
-      padding: 30px 60px;
       grid-gap: 20px;
-
-      h2 {
-        color: var(--light-red);
-      }
-
+      margin-top: 40px;
       .topContainer {
-        grid-row: 1;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 30px;
         .input {
           margin: 0 auto;
           width: 100%;
@@ -34,49 +27,39 @@
             color: var(--light-red);
             font-size: 18px;
             font-weight: bold;
-            width: 100%;
           }
 
           input {
-            background-color: #faf9f6;
             border-style: none;
-            border-radius: 5px;
+            opacity: 0.8;
             height: 35px;
             width: 100%;
-            margin-top: 15px;
+            font-size: 16px;
           }
         }
       }
 
       .msgContainer {
-        grid-row: 2;
         width: 100%;
-        margin-top: 30px;
         label {
-          grid-row: 1;
           color: var(--light-red);
-
           font-size: 18px;
           font-weight: bold;
           width: 100%;
         }
         textarea {
-          grid-row: 2;
-          background-color: #faf9f6;
+          opacity: 0.8;
           border-style: none;
-          border-radius: 5px;
           width: 100%;
           height: 185px;
-          margin-top: 15px;
           padding: 15px;
           font-family: "Montserrat";
           font-weight: 500;
-          font-size: 14px;
+          font-size: 16px;
         }
       }
 
       .submit {
-        grid-row: 3;
         width: 100%;
         text-align: right;
         .btn {
@@ -84,6 +67,7 @@
           border: 0;
           background: rgba(255, 255, 255, 0.13);
           color: #fff;
+
           border-radius: 20px;
           padding: 8px 30px;
           text-transform: uppercase;
@@ -96,6 +80,56 @@
         .btn:hover {
           transform: scale(0.98);
           background: rgba(255, 255, 255, 0.158);
+        }
+      }
+      .error {
+        color: var(--very-dark);
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media (min-width: 1001px) {
+  .contact {
+    form {
+      min-width: 500px;
+      margin: 40px 0;
+
+      .contentContainer {
+        padding: 30px 60px;
+        .topContainer {
+          grid-row: 1;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 30px;
+          .input {
+            label {
+              width: 100%;
+            }
+
+            input {
+              margin-top: 15px;
+              padding-left: 10px;
+            }
+          }
+        }
+
+        .msgContainer {
+          grid-row: 2;
+          width: 100%;
+          margin-top: 30px;
+          label {
+            grid-row: 1;
+          }
+          textarea {
+            grid-row: 2;
+            margin-top: 15px;
+          }
+        }
+
+        .submit {
+          grid-row: 3;
         }
       }
     }
@@ -104,205 +138,80 @@
 
 @media (min-width: 751px) and (max-width: 999px) {
   .contact {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    background: var(--dark-pink);
-    font-family: "Montserrat";
-
     form {
-      height: auto;
-      background-color: rgb(43, 32, 32);
-      width: 70%;
+      width: 80%;
       margin: 40px 0;
-      border-radius: 5px;
-      padding: 30px 40px;
-      grid-gap: 20px;
 
-      h2 {
-        color: var(--light-red);
-      }
-
-      .topContainer {
-        grid-row: 1;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 30px;
-
-        .input {
-          margin: 0 auto;
-          width: 100%;
-
-          label {
-            color: var(--light-red);
-            font-size: 18px;
-            font-weight: bold;
-            width: 300px;
-          }
-
-          input {
-            background-color: #faf9f6;
-            border-style: none;
-            border-radius: 5px;
-            height: 35px;
-            width: 100%;
-            margin-top: 15px;
-          }
-        }
-      }
-
-      .msgContainer {
-        grid-row: 2;
-        width: 100%;
-        margin-top: 30px;
-        label {
+      .contentContainer {
+        padding: 30px 40px;
+        .topContainer {
           grid-row: 1;
-          color: var(--light-red);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 30px;
 
-          font-size: 18px;
-          font-weight: bold;
-          width: 100%;
+          .input {
+            label {
+              width: 300px;
+            }
+
+            input {
+              margin-top: 15px;
+              padding-left: 10px;
+            }
+          }
         }
-        textarea {
+
+        .msgContainer {
           grid-row: 2;
-          background-color: #faf9f6;
-          border-style: none;
-          border-radius: 5px;
           width: 100%;
-          height: 185px;
-          margin-top: 15px;
-          padding: 15px;
-          font-family: "Montserrat";
-          font-weight: 500;
-          font-size: 14px;
+          margin-top: 30px;
+          label {
+            grid-row: 1;
+          }
+          textarea {
+            grid-row: 2;
+            margin: 15px 0;
+          }
         }
-      }
 
-      .submit {
-        grid-row: 3;
-        width: 100%;
-        text-align: right;
-        .btn {
-          display: inline-block;
-          border: 0;
-          background: rgba(255, 255, 255, 0.13);
-          color: #fff;
-          border-radius: 20px;
-          padding: 8px 30px;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 16px;
-          margin-top: 10px;
-          margin-right: 20px;
-          cursor: pointer;
-        }
-        .btn:hover {
-          transform: scale(0.98);
-          background: rgba(255, 255, 255, 0.158);
+        .submit {
+          grid-row: 3;
         }
       }
     }
   }
 }
-.contact {
-  p {
-    color: white;
-  }
-}
 
 @media (max-width: 750px) {
   .contact {
-    display: flex;
-    justify-content: center;
-    background: var(--dark-pink);
-    font-family: "Montserrat";
-    height: auto;
     form {
-      background-color: rgb(43, 32, 32);
       width: 90%;
-      border-radius: 5px;
-      height: 100%;
-      padding: 20px 20px;
-      margin: 20px 0;
+      margin-bottom: 40px;
 
-      h2 {
-        color: var(--light-red);
-        text-transform: uppercase;
-      }
+      .contentContainer {
+        padding: 20px;
 
-      .topContainer {
-        width: 100%;
+        .topContainer {
+          width: 100%;
 
-        .input {
-          margin-top: 20px;
-          label {
-            color: var(--light-red);
-            font-size: 18px;
-            font-weight: bold;
-            width: 100%;
-          }
+          .input {
+            label {
+              width: 100%;
+            }
 
-          input {
-            width: 100%;
-            background-color: #faf9f6;
-            border-style: none;
-            border-radius: 5px;
-            height: 35px;
-            margin: 10px 70px 0 0;
-            font-family: "Montserrat";
-            font-size: 16px;
-            padding-left: 10px;
+            input {
+              margin: 10px 70px 30px 0;
+              padding-left: 10px;
+            }
           }
         }
-      }
 
-      .msgContainer {
-        width: 100%;
-        margin: 50px 0 40px;
-
-        label {
-          color: var(--light-red);
-          font-size: 18px;
-          font-weight: bold;
-          width: 100%;
+        .msgContainer {
+          textarea {
+            margin: 10px 0;
+          }
         }
-        textarea {
-          background-color: #faf9f6;
-          border-style: none;
-          border-radius: 5px;
-          width: 100%;
-          padding: 15px;
-          font-family: "Montserrat";
-          font-weight: 500;
-          font-size: 14px;
-          height: 200px;
-          margin-top: 10px;
-        }
-      }
-
-      .submit {
-        width: 100%;
-        text-align: right;
-        margin-bottom: 20px;
-
-        .btn {
-          background: rgba(255, 255, 255, 0.13);
-          color: #fff;
-          border-radius: 20px;
-          padding: 8px 30px;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 16px;
-          cursor: pointer;
-        }
-        .btn:hover {
-          transform: scale(0.98);
-          background: rgba(5, 5, 5, 0.158);
-        }
-      }
-      .error {
-        color: var(--light-red);
-        font-weight: 500;
       }
     }
   }

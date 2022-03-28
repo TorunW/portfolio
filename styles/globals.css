@@ -74,7 +74,7 @@
   --light-red: #c7493a;
   --red: #a33327c2;
   --dark-red: #a3332779;
-  --very-dark: #1a0c0c;
+  --very-dark: #0f0707;
   --dark: #a3332749;
   --light-grey: #dee2e6;
   --middle-grey: #adb5bd;
@@ -90,8 +90,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Montserrat";
 }
 
 a {

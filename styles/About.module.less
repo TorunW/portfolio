@@ -1,51 +1,83 @@
-@media (min-width: 1000px) {
-  .about {
-    .container {
-      position: relative;
+.about {
+  .container {
+    position: relative;
 
-      .custom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: rotate(180deg);
+    .custom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
 
-        svg {
-          position: relative;
-          display: block;
-          width: calc(100% + 1.3px);
-          height: 124px;
-        }
+      svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 124px;
+      }
 
-        .shape {
-          fill: var(--very-dark);
-        }
+      .shape {
+        fill: var(--very-dark);
+      }
+    }
+  }
+
+  .contentContainer {
+    background: var(--very-dark);
+    display: flex;
+    justify-content: center;
+
+    .content {
+      border-radius: 5px;
+      color: #fff;
+      line-height: 1.7em;
+
+      h1 {
+        color: var(--light-red);
+        text-transform: uppercase;
       }
     }
 
+    .buttonContainer {
+      .firstbtn,
+      .btn {
+        display: flex;
+        background: rgba(255, 255, 255, 0.13);
+        color: #fff;
+        border-radius: 20px;
+        padding: 8px 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        align-items: center;
+
+        i {
+          margin-right: 15px;
+          font-size: 21px;
+        }
+
+        &:hover {
+          transform: scale(0.98);
+          background: rgba(255, 255, 255, 0.158);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .about {
     .contentContainer {
-      background: var(--very-dark);
-      display: flex;
-      justify-content: center;
       padding-bottom: 50px;
 
       .content {
-        background: var(--dark-red);
         width: 50%;
         padding: 30px;
-        border-radius: 5px;
-        color: #fff;
-        font-family: "Montserrat";
         font-weight: 500;
-        line-height: 1.7em;
-
-        h1 {
-          color: var(--light-red);
-          text-transform: uppercase;
-          font-family: "Montserrat";
-        }
       }
 
       .buttonContainer {
@@ -59,28 +91,7 @@
 
         .firstbtn,
         .btn {
-          display: flex;
-          background: rgba(255, 255, 255, 0.13);
-          color: #fff;
-          border-radius: 20px;
-          padding: 8px 20px;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 16px;
-          margin-top: 10px;
-          cursor: pointer;
           width: 170px;
-          align-items: center;
-
-          i {
-            margin-right: 15px;
-            font-size: 21px;
-          }
-
-          &:hover {
-            transform: scale(0.98);
-            background: rgba(255, 255, 255, 0.158);
-          }
         }
       }
     }
@@ -89,52 +100,13 @@
 
 @media (min-width: 751px) and (max-width: 999px) {
   .about {
-    .container {
-      position: relative;
-
-      .custom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: rotate(180deg);
-
-        svg {
-          position: relative;
-          display: block;
-          width: calc(100% + 1.3px);
-          height: 124px;
-        }
-
-        .shape {
-          fill: var(--very-dark);
-        }
-      }
-    }
-
     .contentContainer {
-      background: var(--very-dark);
-      display: flex;
-      justify-content: center;
       padding-bottom: 50px;
 
       .content {
-        background: var(--dark-red);
         width: 65%;
         padding: 30px;
-        border-radius: 5px;
-        color: #fff;
-        font-family: "Montserrat";
         font-weight: 500;
-        line-height: 1.7em;
-
-        h1 {
-          color: var(--light-red);
-          text-transform: uppercase;
-          font-family: "Montserrat";
-        }
       }
 
       .buttonContainer {
@@ -147,28 +119,7 @@
         }
         .firstbtn,
         .btn {
-          display: flex;
-          background: rgba(255, 255, 255, 0.13);
-          color: #fff;
-          border-radius: 20px;
-          padding: 8px 20px;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 16px;
-          margin-top: 10px;
-          cursor: pointer;
           width: 170px;
-          align-items: center;
-
-          i {
-            margin-right: 15px;
-            font-size: 21px;
-          }
-
-          &:hover {
-            transform: scale(0.98);
-            background: rgba(255, 255, 255, 0.158);
-          }
         }
       }
     }
@@ -177,79 +128,19 @@
 
 @media (max-width: 750px) {
   .about {
-    .container {
-      position: relative;
-
-      .custom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: rotate(180deg);
-
-        svg {
-          position: relative;
-          display: block;
-          width: calc(100% + 1.3px);
-          height: 124px;
-        }
-
-        .shape {
-          fill: var(--very-dark);
-        }
-      }
-    }
-
     .contentContainer {
-      background: var(--very-dark);
-      display: flex;
-      justify-content: center;
       padding-bottom: 20px;
 
       .content {
-        background: var(--dark-red);
         width: 95%;
         padding: 20px;
-        border-radius: 5px;
-        color: #fff;
-        font-family: "Montserrat";
         font-weight: 400;
-        line-height: 1.7em;
-
-        h1 {
-          color: var(--light-red);
-          text-transform: uppercase;
-          font-family: "Montserrat";
-        }
       }
 
       .buttonContainer {
         .firstbtn,
         .btn {
-          display: flex;
-          background: rgba(255, 255, 255, 0.13);
-          color: #fff;
-          border-radius: 20px;
-          padding: 8px 20px;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 16px;
-          margin-top: 10px;
-          cursor: pointer;
           width: 100%;
-          align-items: center;
-
-          i {
-            margin-right: 10px;
-            font-size: 21px;
-          }
-
-          &:hover {
-            transform: scale(0.98);
-            background: rgba(255, 255, 255, 0.158);
-          }
         }
       }
     }
