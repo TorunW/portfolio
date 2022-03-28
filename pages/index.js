@@ -12,16 +12,12 @@ import { useState, useEffect } from "react";
 export default function Home({ projects, about, contact, initMessages }) {
   const [messages, setMessages] = useState(initMessages);
 
-
   async function onSubmitNewMessage(newMessage) {
-<<<<<<< HEAD
     const response = await fetch(`${server}/api/messages`, {
       method: "POST",
-=======
-    console.log(server,'server')
-    const response = await fetch(`/api/messages`, {
-      method: 'POST',
->>>>>>> 023ceb926f3563ebc6b04687b8d056e4d1bce5a7
+      // console.log(server,'server')
+      // const response = await fetch(`/api/messages`, {
+      //   method: 'POST',
       headers: {
         "Content-Type": "application/json",
       },
