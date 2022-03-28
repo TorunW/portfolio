@@ -119,10 +119,10 @@ export const getServerSideProps = async (context) => {
 
   if (!session) {
     return {
-      redirect: {
-        destination: "/api/auth/signin",
-        permanent: false,
-      },
+      // redirect: {
+      //   destination: "/api/auth/signin",
+      //   permanent: false,
+      // },
     };
   } else {
     const db = await importDb();

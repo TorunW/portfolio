@@ -8,18 +8,18 @@
 .header div {
   font-family: "Montserrat", sans-serif;
   font-size: 80px;
-  font-weight: 200;
-  color: var(--dark-pink);
+  font-weight: 300;
+  color: var(--dark-red);
   position: relative;
   z-index: 3;
   padding: 20vh 15vw;
 }
 .header b {
   font-weight: 500;
-  color: var(--green);
+  color: var(--light-red);
 }
 .header .dot {
-  color: var(--dark-pink);
+  color: var(--dark-red);
 }
 @media (max-width: 700px) {
   .header {
@@ -31,21 +31,22 @@
     height: 100vh;
     position: relative;
     background-attachment: fixed;
+    background-color: black;
   }
   .header div {
     font-family: "Montserrat";
     font-size: 40px;
     font-weight: 300;
-    color: var(--dark-pink);
+    color: var(--dark-red);
     position: relative;
     z-index: 3;
     padding: 20vh 5vw;
   }
   .header b {
     font-weight: 500;
-    color: var(--green);
+    color: var(--light-red);
   }
   .header .dot {
-    color: var(--dark-pink);
+    color: var(--dark-red);
   }
 }
