@@ -10,8 +10,13 @@ const inbox = ({ initMessages }) => {
   async function onSubmit(message) {
     message.seen = message.seen === 1 ? 0 : 1;
 
+<<<<<<< HEAD
     const response = await fetch(`${server}/api/message/${message.id}`, {
       method: "PUT",
+=======
+    const response = await fetch(`/api/message/${message.id}`, {
+      method: 'PUT',
+>>>>>>> 023ceb926f3563ebc6b04687b8d056e4d1bce5a7
       headers: {
         "Content-Type": "application/json",
       },
@@ -22,8 +27,13 @@ const inbox = ({ initMessages }) => {
   }
 
   async function getMessages() {
+<<<<<<< HEAD
     const response = await fetch(`${server}/api/messages`, {
       method: "GET",
+=======
+    const response = await fetch(`/api/messages`, {
+      method: 'GET',
+>>>>>>> 023ceb926f3563ebc6b04687b8d056e4d1bce5a7
       headers: {
         "Content-Type": "application/json",
       },
@@ -33,8 +43,13 @@ const inbox = ({ initMessages }) => {
   }
 
   async function onDeleteMessage(id) {
+<<<<<<< HEAD
     await fetch(`${server}/api/message/${id}`, {
       method: "DELETE",
+=======
+    await fetch(`/api/message/${id}`, {
+      method: 'DELETE',
+>>>>>>> 023ceb926f3563ebc6b04687b8d056e4d1bce5a7
       headers: {
         "Content-Type": "application/json",
       },
