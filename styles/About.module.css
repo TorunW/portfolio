@@ -18,10 +18,10 @@
     height: 124px;
   }
   .about .container .custom .shape {
-    fill: var(--dark-pink);
+    fill: var(--very-dark);
   }
   .about .contentContainer {
-    background: var(--dark-pink);
+    background: var(--very-dark);
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
@@ -95,10 +95,10 @@
     height: 124px;
   }
   .about .container .custom .shape {
-    fill: var(--dark-pink);
+    fill: var(--very-dark);
   }
   .about .contentContainer {
-    background: var(--dark-pink);
+    background: var(--very-dark);
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
@@ -172,10 +172,10 @@
     height: 124px;
   }
   .about .container .custom .shape {
-    fill: var(--dark-pink);
+    fill: var(--very-dark);
   }
   .about .contentContainer {
-    background: var(--dark-pink);
+    background: var(--very-dark);
     display: flex;
     justify-content: center;
     padding-bottom: 20px;

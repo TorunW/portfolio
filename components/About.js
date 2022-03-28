@@ -48,7 +48,7 @@ const About = ({ about }) => {
               <a className={aboutStyles.btn} href="https://github.com/TorunW">
                 <i className="fab fa-github"></i>github
               </a>
-              <a className={aboutStyles.btn} href="/resume">
+              <a className={aboutStyles.btn} href="/resume.pdf">
                 <i class="fas fa-file-alt"></i>Resume
               </a>
             </div>

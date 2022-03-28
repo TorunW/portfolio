@@ -72,12 +72,10 @@
 
 :root {
   --light-red: #c7493a;
-  --dark-red: #a3332759;
-  --very-dark: #000000a6;
-  --green: #689775;
-  --dark-pink: #131010;
-  --light-pink: #b88a7c;
-
+  --red: #a33327c2;
+  --dark-red: #a3332779;
+  --very-dark: #1a0c0c;
+  --dark: #a3332749;
   --light-grey: #dee2e6;
   --middle-grey: #adb5bd;
   --dark-grey: #2d353c;

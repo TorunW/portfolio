@@ -5,18 +5,18 @@
   }
   .projects .container {
     width: 100%;
-    background: #161616;
+    background: var(--very-dark);
     padding-top: 40px;
     padding-bottom: 40px;
   }
   .projects .container h1 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     text-align: center;
-    color: var(--green);
+    color: var(--light-red);
     text-transform: uppercase;
   }
   .projects .container .projectContainer {
-    background-color: #2b2020;
+    background-color: var(--dark);
     display: grid;
     grid-template-rows: auto auto 40px;
     width: 65%;
@@ -29,11 +29,11 @@
     margin-bottom: 20px;
   }
   .projects .container .projectContainer .text h2 {
-    font-family: 'Montserrat';
-    color: var(--green);
+    font-family: "Montserrat";
+    color: var(--light-red);
   }
   .projects .container .projectContainer .text p {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     color: #fff;
   }
   .projects .container .projectContainer .pc {
@@ -68,18 +68,18 @@
   }
   .projects .container {
     width: 100%;
-    background: #161616;
+    background: var(--very-dark);
     padding-top: 40px;
     padding-bottom: 40px;
   }
   .projects .container h1 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     text-align: center;
-    color: var(--green);
+    color: var(--light-red);
     text-transform: uppercase;
   }
   .projects .container .projectContainer {
-    background-color: #2b2020;
+    background-color: var(--dark);
     display: grid;
     grid-template-rows: auto auto 40px;
     width: 85%;
@@ -92,11 +92,11 @@
     margin-bottom: 20px;
   }
   .projects .container .projectContainer .text h2 {
-    font-family: 'Montserrat';
-    color: var(--green);
+    font-family: "Montserrat";
+    color: var(--light-red);
   }
   .projects .container .projectContainer .text p {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     color: #fff;
   }
   .projects .container .projectContainer .pc {
@@ -129,19 +129,19 @@
     height: 100%;
   }
   .projects .container {
-    background-color: #161616;
+    background-color: var(--very-dark);
     height: 100%;
     padding: 20px 0;
   }
   .projects .container h1 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     text-align: center;
-    color: var(--green);
+    color: var(--light-red);
     text-transform: uppercase;
     margin-top: 0;
   }
   .projects .container .projectContainer {
-    background-color: #2b2020;
+    background-color: var(--dark);
     display: grid;
     grid-template-rows: auto auto 40px;
     width: 90%;
@@ -151,11 +151,11 @@
     padding: 5px 15px 20px;
   }
   .projects .container .projectContainer .text h2 {
-    font-family: 'Montserrat';
-    color: var(--green);
+    font-family: "Montserrat";
+    color: var(---light-red);
   }
   .projects .container .projectContainer .text p {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     color: #fff;
   }
   .projects .container .projectContainer .pc {

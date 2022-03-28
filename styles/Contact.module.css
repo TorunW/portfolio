@@ -3,12 +3,12 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    background: var(--dark-pink);
-    font-family: 'Montserrat';
+    background: var(--very-dark);
+    font-family: "Montserrat";
   }
   .contact form {
     height: auto;
-    background-color: #2b2020;
+    background-color: var(--dark-red);
     width: 60%;
     margin: 40px 0;
     border-radius: 5px;
@@ -16,7 +16,7 @@
     grid-gap: 20px;
   }
   .contact form h2 {
-    color: var(--green);
+    color: var(--light-red);
   }
   .contact form .topContainer {
     grid-row: 1;
@@ -29,7 +29,7 @@
     width: 100%;
   }
   .contact form .topContainer .input label {
-    color: var(--green);
+    color: var(--light-red);
     font-size: 18px;
     font-weight: bold;
     width: 100%;
@@ -49,7 +49,7 @@
   }
   .contact form .msgContainer label {
     grid-row: 1;
-    color: var(--green);
+    color: var(--light-red);
     font-size: 18px;
     font-weight: bold;
     width: 100%;
@@ -63,7 +63,7 @@
     height: 185px;
     margin-top: 15px;
     padding: 15px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 500;
     font-size: 14px;
   }
@@ -97,7 +97,7 @@
     display: flex;
     justify-content: center;
     background: var(--dark-pink);
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
   }
   .contact form {
     height: auto;
@@ -109,7 +109,7 @@
     grid-gap: 20px;
   }
   .contact form h2 {
-    color: var(--green);
+    color: var(--light-red);
   }
   .contact form .topContainer {
     grid-row: 1;
@@ -122,7 +122,7 @@
     width: 100%;
   }
   .contact form .topContainer .input label {
-    color: var(--green);
+    color: var(--light-red);
     font-size: 18px;
     font-weight: bold;
     width: 300px;
@@ -142,7 +142,7 @@
   }
   .contact form .msgContainer label {
     grid-row: 1;
-    color: var(--green);
+    color: var(--light-red);
     font-size: 18px;
     font-weight: bold;
     width: 100%;
@@ -156,7 +156,7 @@
     height: 185px;
     margin-top: 15px;
     padding: 15px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 500;
     font-size: 14px;
   }
@@ -192,7 +192,7 @@
     display: flex;
     justify-content: center;
     background: var(--dark-pink);
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     height: auto;
   }
   .contact form {
@@ -204,7 +204,7 @@
     margin: 20px 0;
   }
   .contact form h2 {
-    color: var(--green);
+    color: var(--light-red);
     text-transform: uppercase;
   }
   .contact form .topContainer {
@@ -214,7 +214,7 @@
     margin-top: 20px;
   }
   .contact form .topContainer .input label {
-    color: var(--green);
+    color: var(--light-red);
     font-size: 18px;
     font-weight: bold;
     width: 100%;
@@ -226,7 +226,7 @@
     border-radius: 5px;
     height: 35px;
     margin: 10px 70px 0 0;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-size: 16px;
     padding-left: 10px;
   }
@@ -235,7 +235,7 @@
     margin: 50px 0 40px;
   }
   .contact form .msgContainer label {
-    color: var(--green);
+    color: var(--light-red);
     font-size: 18px;
     font-weight: bold;
     width: 100%;
@@ -246,7 +246,7 @@
     border-radius: 5px;
     width: 100%;
     padding: 15px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 500;
     font-size: 14px;
     height: 200px;
