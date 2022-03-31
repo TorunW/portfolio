@@ -1,9 +1,10 @@
 .header {
-  background: url("/uploads/headerimgn.jpg") no-repeat center center / cover;
-  height: 100vh;
+  height: 60vh;
   position: relative;
   background-attachment: fixed;
   background-color: black;
+  background: #0f0707;
+  background: linear-gradient(180deg, #0f0707 0%, #662019 50%, #0f0707 100%);
 }
 .header div {
   font-size: 80px;
@@ -22,7 +23,7 @@
 }
 @media (max-width: 700px) {
   .header {
-    background: url("/uploads/headerimgmobile.jpg");
+    background: url('/uploads/headerimgmobile.jpg');
     background-position: center;
     background-repeat: no-repeat;
     /* Do not repeat the image */

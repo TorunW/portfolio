@@ -1,18 +1,15 @@
-import { importDb } from "../../config/db";
-import { server } from "../../config/server";
-import { useState, useEffect } from "react";
-import AdminStyles from "../../styles/Admin.module.css";
-import Head from "next/head";
-import { getSession } from "next-auth/react";
-import { useRouter } from "next/router";
-import { useSession } from "next-auth/react";
-import ProjectForm from "../../components/ProjectForm";
+import { importDb } from '../../config/db';
+import { server } from '../../config/server';
+import { useState, useEffect } from 'react';
+import AdminStyles from '../../styles/Admin.module.css';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import ProjectForm from '../../components/ProjectForm';
 
 const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
   const [update, setUpdate] = useState(false);
-  const { data: session } = useSession();
 
   useEffect(() => {
     if (update === true) {
@@ -27,9 +24,9 @@ const admin = ({ initProjects, initInfos }) => {
 
   async function onDeleteProject(id) {
     await fetch(`/api/project/${id}`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     setUpdate(true);
@@ -39,19 +36,19 @@ const admin = ({ initProjects, initInfos }) => {
     <admin className={AdminStyles.admin}>
       <Head>
         <script
-          src="https://kit.fontawesome.com/4eddce3a99.js"
-          crossorigin="anonymous"
+          src='https://kit.fontawesome.com/4eddce3a99.js'
+          crossorigin='anonymous'
         ></script>
       </Head>
       <div className={AdminStyles.adminPage}>
         <div className={AdminStyles.header}>
           <h2 className={AdminStyles.h2}>Admin Panel</h2>
           <div className={AdminStyles.navButtonContainer}>
-            <a className={AdminStyles.navButton} href="admin/inbox">
+            <a className={AdminStyles.navButton} href='admin/inbox'>
               <div>Inbox</div>
-              <i class="fas fa-envelope"></i>
+              <i class='fas fa-envelope'></i>
             </a>
-            <a className={AdminStyles.navButton} href="/api/auth/signout">
+            <a className={AdminStyles.navButton} href='/api/auth/signout'>
               Signout
             </a>
           </div>
@@ -115,27 +112,14 @@ const admin = ({ initProjects, initInfos }) => {
 export default admin;
 
 export const getServerSideProps = async (context) => {
-  
-  const session = await getSession(context);
-  
-  if (!session) {
-    return {
-      // redirect: {
-      //   destination: "/api/auth/signin",
-      //   permanent: false,
-      // },
-    };
-  } else {
-    const db = await importDb();
-    const projects = await db.all("select * from project");
-    const infos = await db.all("select * from aboutinfo");
+  const db = await importDb();
+  const projects = await db.all('select * from project');
+  const infos = await db.all('select * from aboutinfo');
 
-    return {
-      props: {
-        session,
-        initProjects: projects,
-        initInfos: infos,
-      },
-    };
-  }
+  return {
+    props: {
+      initProjects: projects,
+      initInfos: infos,
+    },
+  };
 };

@@ -1,17 +1,17 @@
-import aboutStyles from "../styles/About.module.css";
+import aboutStyles from '../styles/About.module.css';
 
 const About = ({ about }) => {
   return (
-    <about className={aboutStyles.about} id="about">
+    <about className={aboutStyles.about} id='about'>
       <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
+        rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css'
+        integrity='sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=='
+        crossorigin='anonymous'
+        referrerpolicy='no-referrer'
       />
       <div className={aboutStyles.container}>
-        <div className={aboutStyles.custom}>
+        {/* <div className={aboutStyles.custom}>
           <svg
             className={aboutStyles.svg}
             data-name="Layer 1"
@@ -24,7 +24,7 @@ const About = ({ about }) => {
               className={aboutStyles.shape}
             ></path>
           </svg>
-        </div>
+        </div> */}
       </div>
       <div className={aboutStyles.contentContainer}>
         {about.map((a, i) => (
@@ -34,22 +34,22 @@ const About = ({ about }) => {
             <div className={aboutStyles.buttonContainer}>
               <a
                 className={aboutStyles.firstbtn}
-                href="mailto:torun.wikstrom@gmail.com"
+                href='mailto:torun.wikstrom@gmail.com'
               >
-                <i className="fas fa-envelope"></i>
+                <i className='fas fa-envelope'></i>
                 Email
               </a>
               <a
                 className={aboutStyles.firstbtn}
-                href="https://www.linkedin.com/in/torun-alenius-a77011220/"
+                href='https://www.linkedin.com/in/torun-alenius-a77011220/'
               >
-                <i className="fab fa-linkedin"></i>LinkedIn
+                <i className='fab fa-linkedin'></i>LinkedIn
               </a>
-              <a className={aboutStyles.btn} href="https://github.com/TorunW">
-                <i className="fab fa-github"></i>github
+              <a className={aboutStyles.btn} href='https://github.com/TorunW'>
+                <i className='fab fa-github'></i>github
               </a>
-              <a className={aboutStyles.btn} href="/resume.pdf">
-                <i class="fas fa-file-alt"></i>Resume
+              <a className={aboutStyles.btn} href='/resume.pdf'>
+                <i class='fas fa-file-alt'></i>Resume
               </a>
             </div>
           </div>
