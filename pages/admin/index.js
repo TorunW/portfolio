@@ -10,6 +10,14 @@ const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
   const [update, setUpdate] = useState(false);
+  let router = useRouter();
+
+  useEffect(() => {
+    let token = sessionStorage.getItem('Token');
+    if (!token) {
+      router.push('/signup');
+    }
+  }, []);
 
   useEffect(() => {
     if (update === true) {
@@ -32,6 +40,11 @@ const admin = ({ initProjects, initInfos }) => {
     setUpdate(true);
   }
 
+  function logout() {
+    sessionStorage.removeItem('Token');
+    router.push('/');
+  }
+
   return (
     <admin className={AdminStyles.admin}>
       <Head>
@@ -48,9 +61,7 @@ const admin = ({ initProjects, initInfos }) => {
               <div>Inbox</div>
               <i class='fas fa-envelope'></i>
             </a>
-            <a className={AdminStyles.navButton} href='/api/auth/signout'>
-              Signout
-            </a>
+            <button onClick={logout}>Logga ut</button>
           </div>
         </div>
         <ProjectForm onSubmit={onAddNewProject} />

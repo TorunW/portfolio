@@ -30,6 +30,7 @@
     "eslint-config-next": "11.1.2",
     "file-system": "^2.2.2",
     "filesystem": "^1.0.1",
+    "firebase": "^9.6.10",
     "formidable": "^2.0.1",
     "md5": "^2.3.0",
     "next-auth": "^4.0.1",

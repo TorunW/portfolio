@@ -10,22 +10,7 @@ const About = ({ about }) => {
         crossorigin='anonymous'
         referrerpolicy='no-referrer'
       />
-      <div className={aboutStyles.container}>
-        {/* <div className={aboutStyles.custom}>
-          <svg
-            className={aboutStyles.svg}
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-              className={aboutStyles.shape}
-            ></path>
-          </svg>
-        </div> */}
-      </div>
+      <div className={aboutStyles.container}></div>
       <div className={aboutStyles.contentContainer}>
         {about.map((a, i) => (
           <div key={i} a={a} className={aboutStyles.content}>

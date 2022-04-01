@@ -1,24 +1,28 @@
-import { importDb } from "../../config/db";
-import { server } from "../../config/server";
-import { useState } from "react";
-import Head from "next/head";
-import InboxStyles from "../../styles/Inbox.module.css";
+import { importDb } from '../../config/db';
+import { server } from '../../config/server';
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import InboxStyles from '../../styles/Inbox.module.css';
+import { useRouter } from 'next/router';
 
 const inbox = ({ initMessages }) => {
   const [messages, setMessages] = useState(initMessages);
+  let router = useRouter();
+
+  useEffect(() => {
+    let token = sessionStorage.getItem('Token');
+    if (!token) {
+      router.push('/signup');
+    }
+  }, []);
 
   async function onSubmit(message) {
     message.seen = message.seen === 1 ? 0 : 1;
 
-    // <<<<<<< HEAD
     const response = await fetch(`${server}/api/message/${message.id}`, {
-      method: "PUT",
-      // =======
-      //     const response = await fetch(`/api/message/${message.id}`, {
-      //       method: 'PUT',
-      // >>>>>>> 023ceb926f3563ebc6b04687b8d056e4d1bce5a7
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(message),
     });
@@ -27,15 +31,10 @@ const inbox = ({ initMessages }) => {
   }
 
   async function getMessages() {
-    // <<<<<<< HEAD
     const response = await fetch(`${server}/api/messages`, {
-      method: "GET",
-      // =======
-      //     const response = await fetch(`/api/messages`, {
-      //       method: 'GET',
-      // >>>>>>> 023ceb926f3563ebc6b04687b8d056e4d1bce5a7
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     const newMessages = await response.json();
@@ -43,15 +42,10 @@ const inbox = ({ initMessages }) => {
   }
 
   async function onDeleteMessage(id) {
-    // <<<<<<< HEAD
     await fetch(`${server}/api/message/${id}`, {
-      method: "DELETE",
-      // =======
-      //     await fetch(`/api/message/${id}`, {
-      //       method: 'DELETE',
-      // >>>>>>> 023ceb926f3563ebc6b04687b8d056e4d1bce5a7
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     getMessages();
@@ -61,8 +55,8 @@ const inbox = ({ initMessages }) => {
     <div className={InboxStyles.inbox}>
       <Head>
         <script
-          src="https://kit.fontawesome.com/4eddce3a99.js"
-          crossorigin="anonymous"
+          src='https://kit.fontawesome.com/4eddce3a99.js'
+          crossorigin='anonymous'
         ></script>
       </Head>
       <h2 className={InboxStyles.title}>Inbox</h2>
@@ -96,9 +90,9 @@ const inbox = ({ initMessages }) => {
               <td className={InboxStyles.td}>
                 <a className={InboxStyles.i} onClick={() => onSubmit(message)}>
                   {message.seen === 1 ? (
-                    <i className="far fa-envelope"></i>
+                    <i className='far fa-envelope'></i>
                   ) : (
-                    <i className="far fa-envelope-open"></i>
+                    <i className='far fa-envelope-open'></i>
                   )}
                 </a>
               </td>
@@ -107,7 +101,7 @@ const inbox = ({ initMessages }) => {
                   className={InboxStyles.i}
                   onClick={() => onDeleteMessage(message.id)}
                 >
-                  <i className="fas fa-trash"></i>
+                  <i className='fas fa-trash'></i>
                 </a>
               </td>
             </tr>
@@ -115,7 +109,7 @@ const inbox = ({ initMessages }) => {
         </tbody>
       </table>
       <div className={InboxStyles.buttonContainer}>
-        <a href="/admin" className={InboxStyles.button}>
+        <a href='/admin' className={InboxStyles.button}>
           Back to admin panel
         </a>
       </div>
@@ -127,7 +121,7 @@ export default inbox;
 
 export const getServerSideProps = async () => {
   const db = await importDb();
-  const messages = await db.all("select * from contact");
+  const messages = await db.all('select * from contact');
 
   return {
     props: { initMessages: messages },
