@@ -12,7 +12,7 @@ const inbox = ({ initMessages }) => {
   useEffect(() => {
     let token = sessionStorage.getItem('Token');
     if (!token) {
-      router.push('/signup');
+      router.push('/login');
     }
   }, []);
 

@@ -15,7 +15,7 @@ const admin = ({ initProjects, initInfos }) => {
   useEffect(() => {
     let token = sessionStorage.getItem('Token');
     if (!token) {
-      router.push('/signup');
+      router.push('/login');
     }
   }, []);
 
@@ -57,9 +57,9 @@ const admin = ({ initProjects, initInfos }) => {
         <div className={AdminStyles.header}>
           <h2 className={AdminStyles.h2}>Admin Panel</h2>
           <div className={AdminStyles.navButtonContainer}>
-            <a className={AdminStyles.navButton} href='admin/inbox'>
-              <div>Inbox</div>
-              <i class='fas fa-envelope'></i>
+            <a href='/admin/inbox'>
+              Inbox
+              <i class='fas fa-envelope' />
             </a>
             <button onClick={logout}>Logga ut</button>
           </div>

@@ -8,16 +8,10 @@
 }
 .ProseMirror h1,
 .ProseMirror h2,
-.ProseMirror h3,
-.ProseMirror h4,
-.ProseMirror h5,
-.ProseMirror h6 {
+.ProseMirror h3 {
   line-height: 1.1;
 }
-.ProseMirror code {
-  background-color: rgba(97, 97, 97, 0.1);
-  color: #616161;
-}
+
 .ProseMirror pre {
   background: #0d0d0d;
   color: #fff;
@@ -43,4 +37,13 @@
   border: none;
   border-top: 2px solid rgba(13, 13, 13, 0.1);
   margin: 2rem 0;
+}
+
+#btn {
+  border-style: solid;
+  border-color: grey;
+  color: white;
+  margin: 5px;
+  background: black;
+  border-radius: 3px;
 }
