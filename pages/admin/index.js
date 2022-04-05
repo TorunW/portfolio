@@ -12,6 +12,8 @@ const admin = ({ initProjects, initInfos }) => {
   const [update, setUpdate] = useState(false);
   let router = useRouter();
 
+  // IF ELSE only show admin if we have a token
+
   useEffect(() => {
     let token = sessionStorage.getItem('Token');
     if (!token) {
@@ -50,7 +52,7 @@ const admin = ({ initProjects, initInfos }) => {
       <Head>
         <script
           src='https://kit.fontawesome.com/4eddce3a99.js'
-          crossorigin='anonymous'
+          crossOrigin='anonymous'
         ></script>
       </Head>
       <div className={AdminStyles.adminPage}>

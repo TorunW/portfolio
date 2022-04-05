@@ -56,7 +56,7 @@ const inbox = ({ initMessages }) => {
       <Head>
         <script
           src='https://kit.fontawesome.com/4eddce3a99.js'
-          crossorigin='anonymous'
+          crossOrigin='anonymous'
         ></script>
       </Head>
       <h2 className={InboxStyles.title}>Inbox</h2>
