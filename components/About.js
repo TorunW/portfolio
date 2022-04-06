@@ -10,7 +10,6 @@ const About = ({ about }) => {
         crossOrigin='anonymous'
         referrerpolicy='no-referrer'
       />
-      <div className={aboutStyles.container}></div>
       <div className={aboutStyles.contentContainer}>
         {about.map((a, i) => (
           <div key={i} a={a} className={aboutStyles.content}>

@@ -1,24 +1,3 @@
-.about .container {
-  position: relative;
-}
-.about .container .custom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-.about .container .custom svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 124px;
-}
-.about .container .custom .shape {
-  fill: var(--very-dark);
-}
 .about .contentContainer {
   background: var(--very-dark);
   display: flex;
@@ -106,12 +85,7 @@
     padding-bottom: 20px;
   }
   .about .contentContainer .content {
-    width: 95%;
-    padding: 20px;
+    padding: 25px;
     font-weight: 400;
-  }
-  .about .contentContainer .buttonContainer .firstbtn,
-  .about .contentContainer .buttonContainer .btn {
-    width: 100%;
   }
 }
