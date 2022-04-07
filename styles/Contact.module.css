@@ -61,7 +61,6 @@
 }
 .contact form .contentContainer .submit .btn {
   display: inline-block;
-  border: 0;
   background: rgba(255, 255, 255, 0.13);
   color: #fff;
   border-radius: 20px;
@@ -69,8 +68,6 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
-  margin-top: 10px;
-  margin-right: 20px;
   cursor: pointer;
 }
 .contact form .contentContainer .submit .btn:hover {
@@ -83,7 +80,7 @@
 }
 @media (min-width: 1001px) {
   .contact form {
-    min-width: 500px;
+    width: 600px;
     margin: 40px 0;
   }
   .contact form .contentContainer {
@@ -100,6 +97,7 @@
   }
   .contact form .contentContainer .topContainer .input input {
     margin-top: 15px;
+    max-width: -webkit-fill-available;
     padding-left: 10px;
   }
   .contact form .contentContainer .msgContainer {
@@ -113,9 +111,11 @@
   .contact form .contentContainer .msgContainer textarea {
     grid-row: 2;
     margin-top: 15px;
+    max-width: -webkit-fill-available;
   }
   .contact form .contentContainer .submit {
     grid-row: 3;
+    margin-top: 20px;
   }
 }
 @media (min-width: 751px) and (max-width: 999px) {
@@ -130,7 +130,10 @@
     grid-row: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
+    grid-gap: 50px;
+  }
+  .contact form .contentContainer .topContainer .input {
+    width: 100%;
   }
   .contact form .contentContainer .topContainer .input label {
     width: 300px;
@@ -138,6 +141,7 @@
   .contact form .contentContainer .topContainer .input input {
     margin-top: 15px;
     padding-left: 10px;
+    max-width: -webkit-fill-available;
   }
   .contact form .contentContainer .msgContainer {
     grid-row: 2;
@@ -150,6 +154,7 @@
   .contact form .contentContainer .msgContainer textarea {
     grid-row: 2;
     margin: 15px 0;
+    max-width: -webkit-fill-available;
   }
   .contact form .contentContainer .submit {
     grid-row: 3;

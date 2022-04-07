@@ -42,6 +42,7 @@
 
       .msgContainer {
         width: 100%;
+
         label {
           color: var(--light-red);
           font-size: 18px;
@@ -63,19 +64,16 @@
       .submit {
         width: 100%;
         text-align: right;
+
         .btn {
           display: inline-block;
-          border: 0;
           background: rgba(255, 255, 255, 0.13);
           color: #fff;
-
           border-radius: 20px;
           padding: 8px 30px;
           text-transform: uppercase;
           font-weight: bold;
           font-size: 16px;
-          margin-top: 10px;
-          margin-right: 20px;
           cursor: pointer;
         }
         .btn:hover {
@@ -94,7 +92,7 @@
 @media (min-width: 1001px) {
   .contact {
     form {
-      min-width: 500px;
+      width: 600px;
       margin: 40px 0;
 
       .contentContainer {
@@ -111,6 +109,7 @@
 
             input {
               margin-top: 15px;
+              max-width: -webkit-fill-available;
               padding-left: 10px;
             }
           }
@@ -120,17 +119,20 @@
           grid-row: 2;
           width: 100%;
           margin-top: 30px;
+
           label {
             grid-row: 1;
           }
           textarea {
             grid-row: 2;
             margin-top: 15px;
+            max-width: -webkit-fill-available;
           }
         }
 
         .submit {
           grid-row: 3;
+          margin-top: 20px;
         }
       }
     }
@@ -149,9 +151,10 @@
           grid-row: 1;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          grid-gap: 30px;
+          grid-gap: 50px;
 
           .input {
+            width: 100%;
             label {
               width: 300px;
             }
@@ -159,6 +162,7 @@
             input {
               margin-top: 15px;
               padding-left: 10px;
+              max-width: -webkit-fill-available;
             }
           }
         }
@@ -173,6 +177,7 @@
           textarea {
             grid-row: 2;
             margin: 15px 0;
+            max-width: -webkit-fill-available;
           }
         }
 
