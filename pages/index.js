@@ -40,12 +40,12 @@ export default function Home({ projects, about, contact, initMessages }) {
           name='keyword'
           content='portfolio, javascript, developer, react, front-end'
         />
-        <meta property='image' content='/preview.png' />
+        <meta name='image' content='/preview.png' />
 
         <meta property='og:title' content='Torun Wikström | Portfolio' />
-        <meta name='og:url' content='https://www.torun-wikstrom.com'></meta>
+        <meta property='og:url' content='https://www.torun-wikstrom.com'></meta>
         <meta
-          name='og:description'
+          property='og:description'
           content='A multilingual, creative, and solution-focused web developer with solid experience of practical programming, using JavaScript (Reactjs, Node.js, Next.js) Html, CSS, Postgres, SQLite, skilled at delivering professional, effective and responsive platforms for a diverse range of clients.'
         />
 
