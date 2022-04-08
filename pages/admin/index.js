@@ -5,19 +5,25 @@ import AdminStyles from '../../styles/Admin.module.css';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import ProjectForm from '../../components/ProjectForm';
+import { set } from 'coockies';
 
 const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);
   const [infos, setInfos] = useState(initInfos);
   const [update, setUpdate] = useState(false);
+  const [adminDisplay, setAdminDisplay] = useState(false);
   let router = useRouter();
 
   // IF ELSE only show admin if we have a token
 
   useEffect(() => {
     let token = sessionStorage.getItem('Token');
+
     if (!token) {
       router.push('/login');
+      setAdminDisplay(false);
+    } else {
+      setAdminDisplay(true);
     }
   }, []);
 
@@ -55,7 +61,11 @@ const admin = ({ initProjects, initInfos }) => {
           crossOrigin='anonymous'
         ></script>
       </Head>
-      <div className={AdminStyles.adminPage}>
+
+      <div
+        className={AdminStyles.adminPage}
+        style={adminDisplay === false ? { opacity: '0' } : { opacity: '1' }}
+      >
         <div className={AdminStyles.header}>
           <h2 className={AdminStyles.h2}>Admin Panel</h2>
           <div className={AdminStyles.navButtonContainer}>
