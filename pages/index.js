@@ -29,7 +29,7 @@ export default function Home({ projects, about, contact, initMessages }) {
 
   return (
     <div>
-      <head>
+      <Head>
         <title>Torun Wikström | Portfolio</title>
         <meta name='url' content='https://www.torun-wikstrom.com'></meta>
         <meta
@@ -53,7 +53,7 @@ export default function Home({ projects, about, contact, initMessages }) {
         <meta property='og:type' content='website' />
         <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
         <link rel='icon' href='/favicon.ico' type='image/x-icon'></link>
-      </head>
+      </Head>
       <Nav />
       <Header />
       <About about={about} />
