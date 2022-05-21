@@ -1,6 +1,7 @@
 import aboutStyles from '../styles/About.module.css';
 
 const About = ({ about }) => {
+  console.log(about);
   return (
     <about className={aboutStyles.about} id='about'>
       <link
