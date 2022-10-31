@@ -2,32 +2,26 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  background: var(--very-dark);
   width: 100%;
 }
 .contact h2 {
-  color: var(--light-red);
-  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Playfair Display';
 }
 .contact p {
   color: white;
+  margin: 20px 0;
 }
 .contact form {
   width: 100%;
 }
 .contact form .contentContainer {
-  background-color: var(--dark-red);
-  border-radius: 5px;
   grid-gap: 20px;
   margin-top: 40px;
-}
-.contact form .contentContainer .topContainer .input {
-  margin: 0 auto;
 }
 .contact form .contentContainer .topContainer .input label {
   color: var(--light-red);
   font-size: 18px;
-  font-weight: bold;
 }
 .contact form .contentContainer .topContainer .input input {
   border-style: none;
@@ -42,7 +36,6 @@
 .contact form .contentContainer .msgContainer label {
   color: var(--light-red);
   font-size: 18px;
-  font-weight: bold;
   width: 100%;
 }
 .contact form .contentContainer .msgContainer textarea {
@@ -52,7 +45,6 @@
   height: 185px;
   padding: 15px;
   font-family: 'Montserrat';
-  font-weight: 500;
   font-size: 16px;
 }
 .contact form .contentContainer .submit {
@@ -66,7 +58,6 @@
   border-radius: 20px;
   padding: 8px 30px;
   text-transform: uppercase;
-  font-weight: bold;
   font-size: 16px;
   cursor: pointer;
 }
@@ -76,7 +67,6 @@
 }
 .contact form .contentContainer .error {
   color: var(--very-dark);
-  font-weight: 500;
 }
 @media (min-width: 1001px) {
   .contact form {
@@ -84,20 +74,15 @@
     margin: 40px 0;
   }
   .contact form .contentContainer {
-    padding: 30px 60px;
+    text-align: left;
   }
   .contact form .contentContainer .topContainer {
     grid-row: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
-  }
-  .contact form .contentContainer .topContainer .input label {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
   .contact form .contentContainer .topContainer .input input {
     margin-top: 15px;
-    max-width: -webkit-fill-available;
     padding-left: 10px;
   }
   .contact form .contentContainer .msgContainer {

@@ -1,61 +1,51 @@
 .about .contentContainer {
-  background: var(--very-dark);
+  background: #0f0707;
+  background: linear-gradient(180deg, #240b08 0%, #240b08 50%, #0f0707 100%);
   display: flex;
   justify-content: center;
+  padding-top: 70px;
 }
 .about .contentContainer .content {
   border-radius: 5px;
   color: #fff;
   line-height: 1.7em;
+  text-align: center;
 }
 .about .contentContainer .content h1 {
-  color: var(--light-red);
-  text-transform: uppercase;
+  font-family: 'Playfair Display';
+}
+.about .contentContainer .content .textContainer {
+  margin: 20px 0;
+}
+.about .contentContainer .buttonContainer {
+  display: flex;
+  justify-content: space-evenly;
 }
 .about .contentContainer .buttonContainer .firstbtn,
 .about .contentContainer .buttonContainer .btn {
   display: flex;
-  background: rgba(255, 255, 255, 0.13);
+  flex-direction: column;
+  justify-content: space-evenly;
   color: #fff;
-  border-radius: 20px;
-  padding: 8px 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 16px;
   margin-top: 10px;
   cursor: pointer;
-  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  height: 140px;
+  width: 140px;
 }
 .about .contentContainer .buttonContainer .firstbtn i,
 .about .contentContainer .buttonContainer .btn i {
-  margin-right: 15px;
-  font-size: 21px;
-}
-.about .contentContainer .buttonContainer .firstbtn:hover,
-.about .contentContainer .buttonContainer .btn:hover {
-  transform: scale(0.98);
-  background: rgba(255, 255, 255, 0.158);
+  font-size: 42px;
+  color: var(--light-red);
 }
 @media (min-width: 1000px) {
   .about .contentContainer {
     padding-bottom: 50px;
   }
   .about .contentContainer .content {
-    width: 50%;
+    width: 65%;
     padding: 30px;
-    font-weight: 500;
-  }
-  .about .contentContainer .buttonContainer {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(2, 250px);
-  }
-  .about .contentContainer .buttonContainer .firstbtn {
-    grid-row: 1;
-  }
-  .about .contentContainer .buttonContainer .firstbtn,
-  .about .contentContainer .buttonContainer .btn {
-    width: 170px;
   }
 }
 @media (min-width: 751px) and (max-width: 999px) {
@@ -65,7 +55,6 @@
   .about .contentContainer .content {
     width: 65%;
     padding: 30px;
-    font-weight: 500;
   }
   .about .contentContainer .buttonContainer {
     display: grid;
@@ -86,6 +75,5 @@
   }
   .about .contentContainer .content {
     padding: 25px;
-    font-weight: 400;
   }
 }

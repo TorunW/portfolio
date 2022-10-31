@@ -1,11 +1,9 @@
 import { importDb } from '../../config/db';
-import { server } from '../../config/server';
 import { useState, useEffect } from 'react';
 import AdminStyles from '../../styles/Admin.module.css';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import ProjectForm from '../../components/ProjectForm';
-import { set } from 'coockies';
 
 const admin = ({ initProjects, initInfos }) => {
   const [projects, setProjects] = useState(initProjects);

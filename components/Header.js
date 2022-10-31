@@ -1,15 +1,13 @@
-import headerStyles from "../styles/Header.module.css";
+import styles from '../styles/Header.module.css';
 
 const Header = () => {
   return (
-    <header className={headerStyles.header}>
+    <section className={styles.header}>
       <div>
-        HELLO <br /> I'M <br />
-        <b>
-          TORUN<b className={headerStyles.dot}>.</b>
-        </b>
+        <p className={styles.b}>Frontend Developer</p>
+        <p className={styles.a}>Torun Wikström</p> <br />
       </div>
-    </header>
+    </section>
   );
 };
 

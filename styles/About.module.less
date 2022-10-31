@@ -1,43 +1,47 @@
 .about {
   .contentContainer {
-    background: var(--very-dark);
+    background: rgb(15, 7, 7);
+    background: linear-gradient(
+      180deg,
+      rgba(36, 11, 8, 1) 0%,
+      rgb(36, 11, 8) 50%,
+      rgba(15, 7, 7, 1) 100%
+    );
     display: flex;
     justify-content: center;
-
+    padding-top: 70px;
     .content {
       border-radius: 5px;
       color: #fff;
       line-height: 1.7em;
-
+      text-align: center;
       h1 {
-        color: var(--light-red);
-        text-transform: uppercase;
+        font-family: 'Playfair Display';
+      }
+
+      .textContainer {
+        margin: 20px 0;
       }
     }
 
     .buttonContainer {
+      display: flex;
+      justify-content: space-evenly;
       .firstbtn,
       .btn {
         display: flex;
-        background: rgba(255, 255, 255, 0.13);
+        flex-direction: column;
+        justify-content: space-evenly;
         color: #fff;
-        border-radius: 20px;
-        padding: 8px 20px;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 16px;
         margin-top: 10px;
         cursor: pointer;
-        align-items: center;
-
+        font-weight: bold;
+        font-size: 20px;
+        height: 140px;
+        width: 140px;
         i {
-          margin-right: 15px;
-          font-size: 21px;
-        }
-
-        &:hover {
-          transform: scale(0.98);
-          background: rgba(255, 255, 255, 0.158);
+          font-size: 42px;
+          color: var(--light-red);
         }
       }
     }
@@ -50,25 +54,14 @@
       padding-bottom: 50px;
 
       .content {
-        width: 50%;
+        width: 65%;
         padding: 30px;
-        font-weight: 500;
       }
 
-      .buttonContainer {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: repeat(2, 250px);
-
-        .firstbtn {
-          grid-row: 1;
-        }
-
-        .firstbtn,
-        .btn {
-          width: 170px;
-        }
-      }
+      // .buttonContainer {
+      //   display: grid;
+      //   grid-template-columns: repeat(3, 1fr);
+      // }
     }
   }
 }
@@ -81,7 +74,6 @@
       .content {
         width: 65%;
         padding: 30px;
-        font-weight: 500;
       }
 
       .buttonContainer {
@@ -108,7 +100,6 @@
 
       .content {
         padding: 25px;
-        font-weight: 400;
       }
     }
   }

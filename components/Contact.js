@@ -1,4 +1,4 @@
-import ContactStyles from '../styles/Contact.module.css';
+import styles from '../styles/Contact.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -54,22 +54,18 @@ const Contact = (props, contact) => {
 
   let fullnameErrorDisplay;
   if (fullnameError === true) {
-    fullnameErrorDisplay = (
-      <p className={ContactStyles.error}>Name cannot be empty</p>
-    );
+    fullnameErrorDisplay = <p className={styles.error}>Name cannot be empty</p>;
   }
 
   let emailErrorDisplay;
   if (emailError === true) {
-    emailErrorDisplay = (
-      <p className={ContactStyles.error}>Email isn't valid</p>
-    );
+    emailErrorDisplay = <p className={styles.error}>Email isn't valid</p>;
   }
 
   let messageErrorDisplay;
   if (messageError === true) {
     messageErrorDisplay = (
-      <p className={ContactStyles.error}>Message cannot be empty </p>
+      <p className={styles.error}>Message cannot be empty </p>
     );
   }
 
@@ -77,7 +73,7 @@ const Contact = (props, contact) => {
   if (messageSent === true) {
     displaySuccessMessage = (
       <div>
-        <p className={ContactStyles.success}>
+        <p className={styles.success}>
           Thank you for your message, I will contact you as soon as possible!
         </p>
       </div>
@@ -85,7 +81,7 @@ const Contact = (props, contact) => {
   }
 
   return (
-    <contact className={ContactStyles.contact} id='contact'>
+    <contact className={styles.contact} id='contact'>
       <form>
         <h2>Send me a message</h2>
         <p>
@@ -93,9 +89,9 @@ const Contact = (props, contact) => {
           write me a message!
         </p>
 
-        <div className={ContactStyles.contentContainer}>
-          <div className={ContactStyles.topContainer}>
-            <div className={ContactStyles.input}>
+        <div className={styles.contentContainer}>
+          <div className={styles.topContainer}>
+            <div className={styles.input}>
               <label>Name</label>
               <input
                 value={fullname}
@@ -104,14 +100,14 @@ const Contact = (props, contact) => {
               />
               {fullnameErrorDisplay}
             </div>
-            <div className={ContactStyles.input}>
+            <div className={styles.input}>
               <label>Email</label>
               <input type='email' onChange={(e) => setEmail(e.target.value)} />
 
               {emailErrorDisplay}
             </div>
           </div>
-          <div className={ContactStyles.msgContainer}>
+          <div className={styles.msgContainer}>
             <label>Message</label>
             <textarea
               type='text'
@@ -120,8 +116,8 @@ const Contact = (props, contact) => {
             {messageErrorDisplay}
           </div>
 
-          <div className={ContactStyles.submit}>
-            <a className={ContactStyles.btn} onClick={onSubmit}>
+          <div className={styles.submit}>
+            <a className={styles.btn} onClick={onSubmit}>
               Send message
             </a>
             {displaySuccessMessage}

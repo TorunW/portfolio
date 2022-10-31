@@ -1,20 +1,25 @@
-.nav {
-  height: 50px;
+.nav,
+.navActive {
+  height: 60px;
   padding: 10px;
-  background: #240b08;
   color: #fff;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   z-index: 10;
-  position: absolute;
   width: calc(100vw - 16px);
   position: fixed;
-  top: 0;
+  text-transform: uppercase;
+  transition: all 1s;
+  .menuRight {
+    font-size: 22px;
+  }
 
-  ul {
+  .menuLeft {
+    font-size: 1rem;
+  }
+  .menuLeft,
+  .menuRight {
     display: flex;
-    justify-content: center;
     align-items: center;
     list-style: none;
 
@@ -28,4 +33,15 @@
       }
     }
   }
+}
+
+.navActive {
+  background: #00000081;
+  backdrop-filter: blur(4px);
+  // transition: 0.6s ease-in;
+  top: -100px;
+}
+
+.nav {
+  top: 0;
 }
