@@ -24,8 +24,7 @@ const Projects = ({ projects }) => {
             Google captcha to prevent spam, Nodemailer to receive messages sent
             through the contact form. <br />
             Designed UI/UX using Figma following the clients wishes. Added
-            possibility for translation of the website allowing the user to
-            switch between languages.
+            multilingual support, allowing the user to switch between languages.
           </div>
           <div className={styles.btnContainer}>
             <a
