@@ -8,6 +8,26 @@
     letter-spacing: 5.6px;
     margin-bottom: 32px;
   }
+  .wrapper .content .btnContainer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .wrapper .content .btnContainer a {
+    display: inline-block;
+    background: #000000;
+    color: white;
+    border-radius: 3px;
+    padding: 8px 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .wrapper .content .btnContainer a:hover {
+    background: rgba(0, 0, 0, 0.699);
+  }
 }
 @media (min-width: 1024px) {
   .leftWrapper {
@@ -54,6 +74,26 @@
     letter-spacing: 2.4px;
     margin-bottom: 32px;
   }
+  .wrapper .content .btnContainer {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .wrapper .content .btnContainer a {
+    display: inline-block;
+    background: #000000;
+    color: white;
+    border-radius: 3px;
+    padding: 8px 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .wrapper .content .btnContainer a:hover {
+    background: rgba(0, 0, 0, 0.699);
+  }
 }
 @media (max-width: 769px) {
   .wrapper {
@@ -67,6 +107,26 @@
     font-size: 1.5rem;
     letter-spacing: 2.4px;
     margin: 0px 0px 16px;
+  }
+  .wrapper .content .btnContainer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .wrapper .content .btnContainer a {
+    display: inline-block;
+    background: #000000;
+    color: white;
+    border-radius: 3px;
+    padding: 8px 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .wrapper .content .btnContainer a:hover {
+    background: rgba(0, 0, 0, 0.699);
   }
 }
 .projects {
@@ -84,7 +144,7 @@
   color: var(--red);
 }
 .projects .wrapper {
-  max-width: 1440px;
+  max-width: 1067px;
   margin: 0 auto;
 }
 .projects .wrapper .imageWrapper {
@@ -109,5 +169,5 @@
   line-height: 1.21;
 }
 .projects .wrapper .content .p {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
