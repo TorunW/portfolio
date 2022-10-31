@@ -55,9 +55,8 @@ export default function Home({ projects, about, contact, initMessages }) {
         <link rel='icon' href='/favicon.ico' type='image/x-icon'></link>
       </Head>
       <Nav />
-      <Header />
+      <Header about={about} />
       <Projects projects={projects} />
-      <About about={about} />
       <Contact contact={contact} onSubmit={onSubmitNewMessage} />
       <script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons.js'></script>
     </div>

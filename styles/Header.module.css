@@ -1,16 +1,133 @@
-.header {
-  height: 70vh;
-  margin-top: -80px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, #000000 80%, #000000 40%), url(../public/uploads/key.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: absolute;
+@media (min-width: 1024px) {
+  .header {
+    height: 70vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, #000000 80%, #000000 40%), url(../public/uploads/key.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: absolute;
+  }
+  .header .wrapper {
+    padding-top: 120px;
+    max-width: 1067px;
+    color: var(--red);
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .header .wrapper .a {
+    font-size: 3rem;
+    letter-spacing: 5.6px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1.21;
+  }
+  .header .wrapper .b {
+    font-size: 30px;
+  }
+  .header .wrapper .content {
+    color: white;
+  }
+  .header .wrapper .buttonContainer {
+    max-width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px auto 0;
+    gap: 32px;
+    justify-content: center;
+  }
+  .header .wrapper .buttonContainer a {
+    text-decoration: none;
+  }
 }
-.header div {
-  color: var(--red);
-  text-align: center;
+@media (max-width: 1023px) and (min-width: 770px) {
+  .header {
+    height: 80vh;
+    margin-top: -100px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, #000000 80%, #000000 40%), url(../public/uploads/key.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: absolute;
+  }
+  .header .wrapper {
+    max-width: 1067px;
+    padding: 120px 40px 0;
+    color: var(--red);
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .header .wrapper .a {
+    font-size: 3rem;
+    letter-spacing: 5.6px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1.21;
+  }
+  .header .wrapper .b {
+    font-size: 30px;
+  }
+  .header .wrapper .content {
+    color: white;
+  }
+  .header .wrapper .buttonContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 32px;
+  }
+  .header .wrapper .buttonContainer a {
+    text-decoration: none;
+  }
 }
-.header div .a {
-  font-size: 3rem;
-  font-weight: 900;
+@media (max-width: 769px) {
+  .header {
+    height: auto;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, #000000 80%, #000000 40%), url(../public/uploads/key.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: absolute;
+  }
+  .header .wrapper {
+    color: var(--red);
+    position: relative;
+    z-index: 3;
+    padding-top: 120px;
+  }
+  .header .wrapper .a {
+    font-size: 3rem;
+    letter-spacing: 5.6px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1.21;
+    text-align: center;
+  }
+  .header .wrapper .b {
+    font-size: 30px;
+    text-align: center;
+  }
+  .header .wrapper .content {
+    color: white;
+    padding: 0 20px;
+    text-align: left;
+  }
+  .header .wrapper .buttonContainer {
+    padding: 32px 20px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header .wrapper .buttonContainer a {
+    text-decoration: none;
+  }
 }

@@ -82,13 +82,12 @@ const Contact = (props, contact) => {
 
   return (
     <contact className={styles.contact} id='contact'>
+      <h2>Send me a message</h2>
+      <p>
+        If you have any questions or would like to work me, don't hesitate to
+        write me a message!
+      </p>
       <form>
-        <h2>Send me a message</h2>
-        <p>
-          If you have any questions or would like to work me, don't hesitate to
-          write me a message!
-        </p>
-
         <div className={styles.contentContainer}>
           <div className={styles.topContainer}>
             <div className={styles.input}>

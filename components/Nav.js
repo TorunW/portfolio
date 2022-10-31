@@ -16,7 +16,7 @@ const Nav = () => {
           <a
             onClick={() =>
               document
-                .getElementById('about')
+                .getElementById('header')
                 .scrollIntoView({ behavior: 'smooth' })
             }
           >

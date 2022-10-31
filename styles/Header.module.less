@@ -1,61 +1,162 @@
-.header {
-  height: 70vh;
-  margin-top: -80px;
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 25%,
-      rgb(0, 0, 0) 80%,
-      rgb(0, 0, 0) 40%
-    ),
-    url(../public/uploads/key.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: absolute;
-  // text-align: center;
-  div {
-    color: var(--red);
-    text-align: center;
-    // position: relative;
-    // z-index: 3;
-    // top: 50%;
-    // translate: -50%;
-    // transform: translateY(-50%);
+@media (min-width: 1024px) {
+  .header {
+    height: 70vh;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 25%,
+        rgb(0, 0, 0) 80%,
+        rgb(0, 0, 0) 40%
+      ),
+      url(../public/uploads/key.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: absolute;
+    .wrapper {
+      padding-top: 120px;
+      max-width: 1067px;
+      color: var(--red);
+      text-align: center;
+      position: relative;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
-    .a {
-      font-size: 3rem;
-      font-weight: 900;
-    }
-    .b {
-      // font-size: 30px;
+      .a {
+        font-size: 3rem;
+        letter-spacing: 5.6px;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        font-weight: 900;
+        line-height: 1.21;
+      }
+      .b {
+        font-size: 30px;
+      }
+
+      .content {
+        color: white;
+      }
+
+      .buttonContainer {
+        max-width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 32px auto 0;
+        gap: 32px;
+        justify-content: center;
+        a {
+          text-decoration: none;
+        }
+      }
     }
   }
 }
 
-// @media (max-width: 700px) {
-//   .header {
-//     background: rgb(15, 7, 7);
-//     background: linear-gradient(
-//       180deg,
-//       rgba(36, 11, 8, 1) 0%,
-//       rgb(36, 11, 8) 50%,
-//       rgba(15, 7, 7, 1) 100%
-//     );
-//     height: 45vh;
-//     div {
-//       font-size: 50px;
-//       font-weight: 300;
-//       color: var(--red);
-//       position: relative;
-//       z-index: 3;
-//       padding: 17vh 5vw;
-//     }
-//     b {
-//       font-weight: 500;
-//       color: var(--light-red);
-//     }
+@media (max-width: 1023px) and (min-width: 770px) {
+  .header {
+    height: 80vh;
+    margin-top: -100px;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 25%,
+        rgb(0, 0, 0) 80%,
+        rgb(0, 0, 0) 40%
+      ),
+      url(../public/uploads/key.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: absolute;
+    .wrapper {
+      max-width: 1067px;
+      padding: 120px 40px 0;
+      color: var(--red);
+      text-align: center;
+      position: relative;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
-//     .dot {
-//       color: var(--red);
-//     }
-//   }
-// }
+      .a {
+        font-size: 3rem;
+        letter-spacing: 5.6px;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        font-weight: 900;
+        line-height: 1.21;
+      }
+      .b {
+        font-size: 30px;
+      }
+
+      .content {
+        color: white;
+      }
+
+      .buttonContainer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 32px;
+        margin-top: 32px;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .header {
+    height: auto;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 25%,
+        rgb(0, 0, 0) 80%,
+        rgb(0, 0, 0) 40%
+      ),
+      url(../public/uploads/key.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: absolute;
+    .wrapper {
+      color: var(--red);
+      position: relative;
+      z-index: 3;
+      padding-top: 120px;
+
+      .a {
+        font-size: 3rem;
+        letter-spacing: 5.6px;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        font-weight: 900;
+        line-height: 1.21;
+        text-align: center;
+      }
+      .b {
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .content {
+        color: white;
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .buttonContainer {
+        padding: 32px 20px;
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        justify-content: center;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

@@ -1,19 +1,25 @@
 .contact {
-  height: 100%;
   display: flex;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
 }
 .contact h2 {
-  color: #fff;
-  font-family: 'Playfair Display';
+  font-size: 3rem;
+  letter-spacing: 5.6px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1.21;
+  color: var(--red);
 }
 .contact p {
   color: white;
   margin: 20px 0;
 }
 .contact form {
-  width: 100%;
+  max-width: 1067px;
 }
 .contact form .contentContainer {
   grid-gap: 20px;
@@ -62,8 +68,7 @@
   cursor: pointer;
 }
 .contact form .contentContainer .submit .btn:hover {
-  transform: scale(0.98);
-  background: rgba(255, 255, 255, 0.158);
+  background: rgba(255, 255, 255, 0.185);
 }
 .contact form .contentContainer .error {
   color: var(--very-dark);

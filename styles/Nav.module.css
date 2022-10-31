@@ -9,7 +9,6 @@
   width: calc(100vw - 16px);
   position: fixed;
   text-transform: uppercase;
-  transition: all 1s;
 }
 .nav .menuRight,
 .navActive .menuRight {
@@ -42,10 +41,9 @@
   transform: scale(1.1);
 }
 .navActive {
-  background: #00000081;
-  backdrop-filter: blur(4px);
-  top: -100px;
+  top: 0px;
 }
 .nav {
+  background: #000000c0;
   top: 0;
 }

@@ -6,10 +6,9 @@ const Projects = ({ projects }) => {
   console.log(projects);
   return (
     <section className={styles.projects} id='projects'>
+      <h2 className={styles.title}>My Projects</h2>
       {projects.map((p, i) => {
         let oddIndex = i % 2 == 0 ? true : false;
-        console.log(oddIndex);
-
         return (
           <div
             key={i}
@@ -21,9 +20,8 @@ const Projects = ({ projects }) => {
             }
           >
             <div className={styles.imageWrapper}>
-              <img src='/uploads/nahdran.png' className={styles.styledImage} />
+              <img src={p.desktop_image} className={styles.styledImage} />
             </div>
-
             <div
               className={
                 oddIndex === true
